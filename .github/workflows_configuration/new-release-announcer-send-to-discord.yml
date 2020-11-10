@@ -1,0 +1,32 @@
+# content:
+# username:
+# avatar_url:
+tts: false
+embeds:
+  - title: "[NodeJS] GitHub Sodium"
+    description: "Version %payload.release.name% (%payload.release.tag_name%) is released and available on:"
+    # url:
+    color: "2,110,0"
+    # footer:
+      # text:
+      # icon_url:
+    # image:
+      # url:
+    thumbnail:
+      url: "https://i.imgur.com/iVfV21H.png"
+    # video:
+      # url:
+    # author:
+      # name:
+      # url:
+      # icon_url:
+    fields:
+      - name: "GitHub Repository Release (& Changelog)"
+        value: "%payload.release.html_url%"
+        inline: false
+      - name: "NPM (NodeJS Package Manager)"
+        value: "https://www.npmjs.com/package/@hugoalh/github-sodium"
+        inline: false
+      - name: "GitHub Repository"
+        value: "https://github.com/hugoalh-studio/NodeJS.GitHubSodium"
+        inline: false
