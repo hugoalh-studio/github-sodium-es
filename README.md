@@ -81,8 +81,13 @@ Encrypt value to GitHub secret value.
 
 ##### Argument
 
-- **`publicKey`:** `<string>` Your organization or repository public key, which need for encrypt secret before create or update secret.
-- **`value`:** `<string>` Your secret value.
+###### `publicKey`
+
+`<string>` Your organization or repository public key, which need for encrypt secret before create or update secret.
+
+###### `value`
+
+`<string>` Your secret value.
 
 ##### Return
 
