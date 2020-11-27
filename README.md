@@ -11,7 +11,7 @@
   <img align="center" alt="GitHub Fork" src="https://img.shields.io/github/forks/hugoalh-studio/NodeJS.GitHubSodium?logo=github&logoColor=ffffff&style=flat-square" />
 </details>
 
-A NodeJS library/module to provide a easier sodium for GitHub secret.
+A NodeJS library/module to provide an easier sodium for GitHub secret.
 
 <table>
   <tr>
