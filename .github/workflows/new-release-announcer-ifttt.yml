@@ -4,8 +4,8 @@ on:
     types:
       - "published"
 jobs:
-  send-to-ifttt:
-    name: "Send To IFTTT"
+  new-release-announcer-ifttt:
+    name: "New Release Announcer - IFTTT"
     runs-on: "ubuntu-latest"
     steps:
       - uses: "hugoalh/GitHubAction.SendToIFTTT@v3.1.2"

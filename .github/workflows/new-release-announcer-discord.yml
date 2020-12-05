@@ -4,8 +4,8 @@ on:
     types:
       - "published"
 jobs:
-  send-to-discord:
-    name: "Send To Discord"
+  new-release-announcer-discord:
+    name: "New Release Announcer - Discord"
     runs-on: "ubuntu-latest"
     steps:
       - uses: "hugoalh/GitHubAction.SendToDiscord@v3.1.1"
