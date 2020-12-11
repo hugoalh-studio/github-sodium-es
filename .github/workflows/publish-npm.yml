@@ -1,4 +1,4 @@
-name: "NodeJS Publish"
+name: "Publish To NPM"
 on:
   release:
     types:
