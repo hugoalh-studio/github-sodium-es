@@ -1,0 +1,28 @@
+{
+	"name": "@hugoalh/github-sodium",
+	"version": "1.1.0",
+	"description": "A module to provide an easier sodium for GitHub secret.",
+	"keywords": [
+		"github",
+		"sodium"
+	],
+	"homepage": "https://github.com/hugoalh-studio/github-sodium-nodejs#readme",
+	"bugs": {
+		"url": "https://github.com/hugoalh-studio/github-sodium-nodejs/issues"
+	},
+	"license": "MIT",
+	"author": "hugoalh",
+	"main": "lib/main.js",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/hugoalh-studio/github-sodium-nodejs.git"
+	},
+	"dependencies": {
+		"tweetsodium": "^0.0.5"
+	},
+	"engines": {
+		"node": ">= 14.15.0",
+		"npm": ">= 6.14.8"
+	},
+	"private": false
+}

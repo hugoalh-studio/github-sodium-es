@@ -1,0 +1,30 @@
+# $<Schema>$ https://docs.github.com/en/github/administering-a-repository/configuration-options-for-dependency-updates
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "daily"
+      time: "00:00"
+      timezone: "Etc/UTC"
+    labels:
+      - "📦dependency"
+      - "🔵unconfirm"
+    open-pull-requests-limit: 100
+    pull-request-branch-name:
+      separator: "/"
+    rebase-strategy: "disabled"
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "daily"
+      time: "00:00"
+      timezone: "Etc/UTC"
+    labels:
+      - "📦dependency"
+      - "🔵unconfirm"
+    open-pull-requests-limit: 100
+    pull-request-branch-name:
+      separator: "/"
+    rebase-strategy: "disabled"
+    versioning-strategy: "auto"
