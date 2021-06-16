@@ -15,7 +15,7 @@ A module for NodeJS to provide an easier sodium for GitHub secret.
 
 <table>
   <tr>
-    <td><a href="./license.md"><b>License</b></a></td>
+    <td><a href="./LICENSE.md"><b>License</b></a></td>
     <td>MIT</td>
   </tr>
   <tr>
