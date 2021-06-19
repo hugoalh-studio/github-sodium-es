@@ -83,11 +83,11 @@ Encrypt value to GitHub secret value.
 
 ###### `publicKey`
 
-`<string>` Your organization or repository public key, which need for encrypt secret before create or update secret.
+`<string>` Organization's or repository's public key, which need for encrypt value to secret value before create or update a secret.
 
 ###### `value`
 
-`<string>` Your secret value.
+`<string>` Value that need to encrypt as secret value.
 
 ##### Return
 
