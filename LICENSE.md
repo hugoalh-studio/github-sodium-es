@@ -10,23 +10,13 @@ The software is provided "as is", without warranty of any kind, express or impli
 
 ---
 
-*This is a short and simple table that mostly concluded this license about the permission(s), condition(s), and limitation(s); The license content section shall prevail.*
+*This is a short and simple list that mostly concluded this license about the permission(s), condition(s), and limitation(s); The license content section shall prevail.*
 
-<table>
-  <tr>
-    <td align="center">✔</td>
-    <td><ul>
-      <li>Commercial Use</li>
-      <li>Distribution</li>
-      <li>Modification</li>
-      <li>Private Use</li>
-    </ul></td>
-  </tr>
-  <tr>
-    <td align="center">❌</td>
-    <td><ul>
-      <li>Liability</li>
-      <li>Warranty</li>
-    </ul></td>
-  </tr>
-</table>
+|  |  |
+|:-:|:--|
+| ✔ | Commercial Use |
+| ✔ | Distribution |
+| ✔ | Modification |
+| ✔ | Private Use |
+| ❌ | Liability |
+| ❌ | Warranty |
