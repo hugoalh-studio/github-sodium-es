@@ -1,8 +1,6 @@
 # $<Schema>$ https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions
 name: "Anti Virus - ClamAV (Full)"
 on:
-  schedule:
-    - cron: "0 0 * * 3"
   workflow_dispatch:
 jobs:
   anti-virus-clamav-full:

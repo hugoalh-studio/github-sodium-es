@@ -1,0 +1,50 @@
+# $<Schema>$ https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/syntax-for-issue-forms
+name: "Bug Report (Form Edition)"
+description: "Report a bug."
+labels:
+  - "🐛bug"
+  - "🔵unconfirm"
+body:
+  - type: "markdown"
+    attributes:
+      value: "> 🧪 **Experimental:** GitHub Issue Form is currently in beta; If encounter any issue(s), please use the Markdown edition."
+  - type: "textarea"
+    id: "describe"
+    attributes:
+      label: "Describe"
+      description: "What the bug is?"
+    validations:
+      required: false
+  - type: "dropdown"
+    id: "version"
+    attributes:
+      label: "Version"
+      description: "What version(s) is affected? Must be a supported version(s) listed in the \"Security Policy\" (/.github/SECURITY.md)."
+      multiple: true
+      options:
+        - "v1.1.1"
+        - "v1.1.0"
+        - "v1.0.0"
+    validations:
+      required: false
+  - type: "textarea"
+    id: "reproduce"
+    attributes:
+      label: "To Reproduce"
+      description: "If this bug can be reproduce, please list the step(s)!"
+    validations:
+      required: false
+  - type: "textarea"
+    id: "expected-behavior"
+    attributes:
+      label: "Expected Behavior"
+      description: "What thing(s) should expected to happen?"
+    validations:
+      required: false
+  - type: "textarea"
+    id: "additional"
+    attributes:
+      label: "Additional"
+      description: "If there has any information that related to this issue but not suitable to the other field(s), please list it here."
+    validations:
+      required: false

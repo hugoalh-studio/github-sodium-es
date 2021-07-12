@@ -1,0 +1,38 @@
+# $<Schema>$ https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/syntax-for-issue-forms
+name: "文檔問題（表單版）"
+description: "報告一個文檔問題。"
+labels:
+  - "📚documentation"
+  - "🔵unconfirm"
+body:
+  - type: "markdown"
+    attributes:
+      value: "> 🧪 **實驗：** GitHub議題表單目前處於測試階段；如果遇到任何問題，請使用Markdown版。"
+  - type: "textarea"
+    id: "describe"
+    attributes:
+      label: "描述"
+      description: "是甚麼問題？"
+    validations:
+      required: false
+  - type: "textarea"
+    id: "page"
+    attributes:
+      label: "頁面"
+      description: "相關頁面的列表。"
+    validations:
+      required: false
+  - type: "textarea"
+    id: "expected-content"
+    attributes:
+      label: "預期內容"
+      description: "應該要有甚麼內容？"
+    validations:
+      required: false
+  - type: "textarea"
+    id: "additional"
+    attributes:
+      label: "其他"
+      description: "如果有任何與此議題相關但是不適用於任何欄位的資料，請在此處列出。"
+    validations:
+      required: false

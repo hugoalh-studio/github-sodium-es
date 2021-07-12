@@ -1,0 +1,38 @@
+# $<Schema>$ https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/syntax-for-issue-forms
+name: "Documentation Issue (Form Edition)"
+description: "Report a documentation issue."
+labels:
+  - "📚documentation"
+  - "🔵unconfirm"
+body:
+  - type: "markdown"
+    attributes:
+      value: "> 🧪 **Experimental:** GitHub Issue Form is currently in beta; If encounter any issue(s), please use the Markdown edition."
+  - type: "textarea"
+    id: "describe"
+    attributes:
+      label: "Describe"
+      description: "What the issue is?"
+    validations:
+      required: false
+  - type: "textarea"
+    id: "page"
+    attributes:
+      label: "Page"
+      description: "List of the related page(s)."
+    validations:
+      required: false
+  - type: "textarea"
+    id: "expected-content"
+    attributes:
+      label: "Expected Content"
+      description: "What content(s) should expected?"
+    validations:
+      required: false
+  - type: "textarea"
+    id: "additional"
+    attributes:
+      label: "Additional"
+      description: "If there has any information that related to this issue but not suitable to the other field(s), please list it here."
+    validations:
+      required: false

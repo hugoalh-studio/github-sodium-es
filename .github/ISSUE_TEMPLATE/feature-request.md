@@ -1,5 +1,5 @@
 ---
-name: "Feature Request"
+name: "Feature Request (Markdown Edition)"
 about: "Suggest an idea."
 labels: "➕enhancement,🔵unconfirm"
 ---
