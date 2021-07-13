@@ -12,6 +12,6 @@ jobs:
         with:
           fetch-depth: 0
       - name: "Full Scan Repository"
-        uses: "hugoalh/clamav-ghaction@v1.1.1"
+        uses: "djdefi/gitavscan@4"
         with:
           full: "--full"
