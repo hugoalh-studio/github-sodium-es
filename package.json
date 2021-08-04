@@ -1,6 +1,6 @@
 {
 	"name": "@hugoalh/github-sodium",
-	"version": "1.1.1",
+	"version": "1.1.2",
 	"description": "A module to provide an easier sodium for GitHub secret.",
 	"keywords": [
 		"github",
@@ -12,7 +12,11 @@
 	},
 	"license": "MIT",
 	"author": "hugoalh",
-	"main": "lib/main.js",
+	"main": "./lib/main.js",
+	"exports": {
+		"import": "./lib/main.mjs",
+		"require": "./lib/main.js"
+	},
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/hugoalh-studio/github-sodium-nodejs.git"
