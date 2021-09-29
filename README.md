@@ -60,6 +60,6 @@ githubSodium(// Encrypt value to GitHub secret value.
 ### Example
 
 ```js
-githubSodium("awpojpwojqmrmklmklmkljicvjifjogjotrj", "my-secret");
-//=> "spjerpawakmsfnklasklfnkljljkasjkdlazsdjfljslejifklejrlkmslkfmklpmqhnoubdpsdofipskpdokfepkasdpoaiwopejkqmatyn"
+githubSodium("base64-encoded-public-key", "plain-text-secret");
+//=> "+ZYvJDZMHUfBkJdyq5Zm9SKqeuBQ4sj+6sfjlH4CgG0="
 ```
