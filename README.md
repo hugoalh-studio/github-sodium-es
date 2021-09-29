@@ -26,7 +26,7 @@ This project is based on "tweetsodium" ([GitHub](https://github.com/github/tweet
 
 ## 📚 Documentation
 
-### Getting Started (Excerpt)
+### Getting Started
 
 #### Install
 
