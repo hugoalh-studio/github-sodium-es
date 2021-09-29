@@ -7,7 +7,7 @@ labels:
 body:
   - type: "markdown"
     attributes:
-      value: "> 🧪 **Experimental:** GitHub Issue Form is currently in beta; If encounter any issue(s), please use the Markdown edition."
+      value: "> **🧪 Experimental:** GitHub Issue Form is currently in beta; If encounter any issue(s), please use the Markdown edition."
   - type: "textarea"
     id: "describe"
     attributes:

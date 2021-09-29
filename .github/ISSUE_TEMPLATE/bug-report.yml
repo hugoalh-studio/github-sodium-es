@@ -7,7 +7,7 @@ labels:
 body:
   - type: "markdown"
     attributes:
-      value: "> 🧪 **Experimental:** GitHub Issue Form is currently in beta; If encounter any issue(s), please use the Markdown edition."
+      value: "> **🧪 Experimental:** GitHub Issue Form is currently in beta; If encounter any issue(s), please use the Markdown edition."
   - type: "textarea"
     id: "describe"
     attributes:
@@ -22,6 +22,7 @@ body:
       description: "What version(s) is affected? Must be a supported version(s) listed in the \"Security Policy\" (/.github/SECURITY.md)."
       multiple: true
       options:
+        - "v1.1.3"
         - "v1.1.2"
         - "v1.1.1"
         - "v1.1.0"

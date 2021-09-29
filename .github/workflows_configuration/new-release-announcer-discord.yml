@@ -28,5 +28,5 @@ embeds:
         value: "https://www.npmjs.com/package/@hugoalh/github-sodium"
         inline: false
       - name: "Repository"
-        value: "https://github.com/hugoalh-studio/github-sodium-nodejs"
+        value: "%payload.repository.html_url%"
         inline: false
