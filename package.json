@@ -13,6 +13,7 @@
 	"license": "MIT",
 	"author": "hugoalh",
 	"main": "./lib/main.js",
+	"module": "./lib/main.mjs",
 	"exports": {
 		"import": "./lib/main.mjs",
 		"require": "./lib/main.js"

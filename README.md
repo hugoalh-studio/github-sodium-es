@@ -54,7 +54,7 @@ import githubSodium from "@hugoalh/github-sodium";
 githubSodium(// Encrypt value to GitHub secret value.
   publicKey: string,// Organization's or repository's public key, which need for encrypt value to secret value before create or update a secret.
   value: string// Value that need to encrypt as secret value.
-): string// A encrypted GitHub secret value.
+): string// An encrypted GitHub secret value.
 ```
 
 ### Example

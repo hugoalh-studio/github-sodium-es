@@ -6,7 +6,7 @@ labels: "📚documentation,🔵unconfirm"
 > ### Suggested Content List
 >
 > - **Describe:** What the issue is?
-> - **Page:** List of the related page(s).
-> - **Expected Content:** What content(s) should expected?
+> - **Page:** List of the related pages.
+> - **Expected Content:** What contents should expected?
 >
 > Please remove this list before submit!

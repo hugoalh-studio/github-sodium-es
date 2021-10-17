@@ -23,11 +23,11 @@ env:
   prototypejs: false
   protractor: false
   qunit: false
-  serviceworker: false
-  shared-node-browser: false
+  serviceworker: true
+  shared-node-browser: true
   shelljs: false
-  webextensions: false
-  worker: false
+  webextensions: true
+  worker: true
 parserOptions:
   ecmaFeatures:
     impliedStrict: true

@@ -12,6 +12,7 @@ on:
       - "edited"
       - "reopened"
       - "synchronize"
+  workflow_dispatch:
 jobs:
   code-analysis-ossar:
     name: "Code Analysis - Open Source Static Analysis Runner"

@@ -1,26 +1,9 @@
 # $<Schema>$ https://lgtm.com/help/lgtm/lgtm.yml-configuration-file
-path_classifiers:
-  generated:
-    - "compiled/*"
-  documentation: []
-  library:
-    - "**/node_modules/*"
-    - "**/thirdparty/lib/*"
-  template:
-    - "reference/*"
-  test:
-    - "**/*debug*.*"
-    - "**/*deprecated*.*"
-    - "**/*test*.*"
-    - "**/debug/*"
-    - "**/deprecated/*"
-    - "**/test/*"
-queries:
-  - include: "*"
 extraction:
   javascript:
     index:
       filetypes:
+        ".cjs": "js"
         ".jsm": "js"
         ".mjs": "js"
         ".tmpl": "html"
@@ -29,3 +12,5 @@ extraction:
         - include: "**/*.ts"
       typescript: "full"
       xml_mode: "all"
+queries:
+  - include: "*"

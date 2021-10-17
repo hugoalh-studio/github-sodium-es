@@ -5,9 +5,6 @@ labels:
   - "🐛bug"
   - "🔵unconfirm"
 body:
-  - type: "markdown"
-    attributes:
-      value: "> **🧪 Experimental:** GitHub Issue Form is currently in beta; If encounter any issue(s), please use the Markdown edition."
   - type: "textarea"
     id: "describe"
     attributes:
@@ -19,7 +16,7 @@ body:
     id: "version"
     attributes:
       label: "Version"
-      description: "What version(s) is affected? Must be a supported version(s) listed in the \"Security Policy\" (/.github/SECURITY.md)."
+      description: "What versions are affected? Versions must be listed as supported in the Security Policy (/.github/SECURITY.md)."
       multiple: true
       options:
         - "v1.1.3"
@@ -33,20 +30,20 @@ body:
     id: "reproduce"
     attributes:
       label: "To Reproduce"
-      description: "If this bug can be reproduce, please list the step(s)!"
+      description: "If this bug can be reproduce, please list the steps!"
     validations:
       required: false
   - type: "textarea"
     id: "expected-behavior"
     attributes:
       label: "Expected Behavior"
-      description: "What thing(s) should expected to happen?"
+      description: "What things should expected to happen?"
     validations:
       required: false
   - type: "textarea"
-    id: "additional"
+    id: "additional-information"
     attributes:
-      label: "Additional"
-      description: "If there has any information that related to this issue but not suitable to the other field(s), please list it here."
+      label: "Additional Information"
+      description: "If there have information that related to this issue but not suitable to the other fields, please list those at here."
     validations:
       required: false

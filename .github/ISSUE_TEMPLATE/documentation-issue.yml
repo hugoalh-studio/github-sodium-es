@@ -5,9 +5,6 @@ labels:
   - "📚documentation"
   - "🔵unconfirm"
 body:
-  - type: "markdown"
-    attributes:
-      value: "> **🧪 Experimental:** GitHub Issue Form is currently in beta; If encounter any issue(s), please use the Markdown edition."
   - type: "textarea"
     id: "describe"
     attributes:
@@ -19,20 +16,20 @@ body:
     id: "page"
     attributes:
       label: "Page"
-      description: "List of the related page(s)."
+      description: "List of the related pages."
     validations:
       required: false
   - type: "textarea"
     id: "expected-content"
     attributes:
       label: "Expected Content"
-      description: "What content(s) should expected?"
+      description: "What contents should expected?"
     validations:
       required: false
   - type: "textarea"
-    id: "additional"
+    id: "additional-information"
     attributes:
-      label: "Additional"
-      description: "If there has any information that related to this issue but not suitable to the other field(s), please list it here."
+      label: "Additional Information"
+      description: "If there have information that related to this issue but not suitable to the other fields, please list those at here."
     validations:
       required: false

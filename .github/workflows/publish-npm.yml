@@ -1,28 +1,42 @@
 # $<Schema>$ https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions
-name: "Publish To NPM"
+name: "Publish - NPM"
 on:
   release:
     types:
       - "published"
 jobs:
   publish-npm:
-    name: "Publish To NPM"
+    name: "Publish - NPM"
     runs-on: "ubuntu-latest"
     steps:
       - name: "Checkout Repository"
         uses: "actions/checkout@v2.3.4"
+      - name: "Get Package Name"
+        id: "get-package-name"
+        run: "Write-Output \"::set-output name=value::$(Get-Content .\\package.json -Encoding UTF8 -Raw | ConvertFrom-Json | Select-Object -ExpandProperty name)\""
+        shell: "pwsh"
+      - name: "Get Package Version"
+        id: "get-package-version"
+        run: "Write-Output \"::set-output name=value::$(Get-Content .\\package.json -Encoding UTF8 -Raw | ConvertFrom-Json | Select-Object -ExpandProperty version)\""
+        shell: "pwsh"
       - name: "Setup NodeJS"
         uses: "actions/setup-node@v2.4.1"
         with:
           node-version: 14
+          check-latest: true
           registry-url: "https://registry.npmjs.org/"
       - name: "Publish To Tag @latest"
-        if: ${{github.event.release.prerelease == false}}
+        if: "${{github.event.release.prerelease == false || startsWith(steps.get-package-version.outputs.value, '0.')}}"
         run: "npm publish"
         env:
           NODE_AUTH_TOKEN: "${{secrets.NPM_TOKEN}}"
+      - name: "Distribute To Tag @pre"
+        if: "${{github.event.release.prerelease == false || startsWith(steps.get-package-version.outputs.value, '0.')}}"
+        run: "npm dist-tag add \"${{steps.get-package-name.outputs.value}}@${{steps.get-package-version.outputs.value}}\" pre"
+        env:
+          NODE_AUTH_TOKEN: "${{secrets.NPM_TOKEN}}"
       - name: "Publish To Tag @pre"
-        if: ${{github.event.release.prerelease == true}}
+        if: "${{github.event.release.prerelease == true && !(startsWith(steps.get-package-version.outputs.value, '0.'))}}"
         run: "npm publish --tag pre"
         env:
           NODE_AUTH_TOKEN: "${{secrets.NPM_TOKEN}}"

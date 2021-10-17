@@ -50,7 +50,7 @@ All community leaders are obligated to respect the privacy and security of the r
 
 - Your GitHub account username (e.g.: `@octocat`) (only for private report)
 - Project identification name (only for private report)
-- List of the related page(s)
+- List of the related pages
 
 ## Enforcement Guidelines
 

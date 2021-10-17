@@ -12,6 +12,7 @@ on:
       - "edited"
       - "reopened"
       - "synchronize"
+  workflow_dispatch:
 jobs:
   code-analysis-ghsl:
     name: "Code Analysis - GitHub Super Linter"

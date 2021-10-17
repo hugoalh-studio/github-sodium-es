@@ -12,20 +12,11 @@ on:
       - "edited"
       - "reopened"
       - "synchronize"
+  workflow_dispatch:
 jobs:
   code-analysis-codeql:
     name: "Code Analysis - CodeQL"
     runs-on: "ubuntu-latest"
-    strategy:
-      fail-fast: false
-      matrix:
-        language:
-          - "cpp"
-          - "csharp"
-          - "go"
-          - "java"
-          - "javascript"
-          - "python"
     steps:
       - name: "Checkout Repository"
         uses: "actions/checkout@v2.3.4"
@@ -34,11 +25,9 @@ jobs:
       - name: "Initialize CodeQL"
         uses: "github/codeql-action/init@v1"
         with:
-          languages: "${{matrix.language}}"
           queries: "+security-and-quality"
-      # Auto build attempts to build any compiled languages (C/C++, C#, or Java).
-      - name: "Auto Build"
-        if: "${{matrix.language == 'cpp' || matrix.language == 'csharp' || matrix.language == 'java'}}"
+      # Automatically build attempts to build any compiled languages (C/C++, C#, or Java).
+      - name: "Automatically Build"
         uses: "github/codeql-action/autobuild@v1"
         continue-on-error: true
       - name: "Analyze Repository"
