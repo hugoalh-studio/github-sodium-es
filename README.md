@@ -22,7 +22,7 @@
 
 A NodeJS module to provide an easier sodium for GitHub secret.
 
-This project is based on "tweetsodium" ([GitHub](https://github.com/github/tweetsodium))([NPM](https://www.npmjs.com/package/tweetsodium)) with optimization for GitHub secret.
+This project is based on TweetSodium ([GitHub](https://github.com/github/tweetsodium))([NPM](https://www.npmjs.com/package/tweetsodium)) with optimization for GitHub secret.
 
 ## 📚 Documentation
 

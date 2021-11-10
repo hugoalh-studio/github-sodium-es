@@ -9,8 +9,11 @@ jobs:
     name: "New Release Announcer - IFTTT"
     runs-on: "ubuntu-latest"
     steps:
-      - uses: "hugoalh/trigger-ifttt-webhook-applet-ghaction@v4.0.0-beta.4"
+      - uses: "hugoalh/trigger-ifttt-webhook-applet-ghaction@v4.0.3"
         with:
-          webhook_eventname: "githubaction_twitter"
-          webhook_key: "${{secrets.IFTTTWEBHOOK_HUGOALH_KEY}}"
-          value1: "GitHub Sodium (NodeJS Edition) version %payload.release.name% (%payload.release.tag_name%) is released and available on GitHub!\n%payload.release.html_url%"
+          eventname: "githubaction_twitter"
+          key: "${{secrets.IFTTTWEBHOOK_HUGOALH_KEY}}"
+          payload: |
+            {
+              "value1": "GitHub Sodium (NodeJS Edition) version ${{github.event.release.name}} (${{github.event.release.tag_name}}) is released and available on GitHub!\n${{github.event.release.html_url}}"
+            }
