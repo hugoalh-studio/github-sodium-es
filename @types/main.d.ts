@@ -7,3 +7,4 @@ export = githubSodium;
  * @returns {string} An encrypted GitHub secret value.
  */
 declare function githubSodium(publicKey: string, value: string): string;
+//# sourceMappingURL=main.d.ts.map

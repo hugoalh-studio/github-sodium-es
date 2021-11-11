@@ -3,8 +3,12 @@
 	"compilerOptions": {
 		"allowJs": true,
 		"declaration": true,
+		"declarationMap": true,
 		"emitDeclarationOnly": true,
-		"outDir": "./@types"
+		"module": "esnext",
+		"moduleResolution": "node",
+		"outDir": "./@types",
+		"target": "ESNext"
 	},
 	"include": [
 		"./lib/**/*.js",
