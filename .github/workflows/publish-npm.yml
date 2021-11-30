@@ -20,7 +20,7 @@ jobs:
         run: "Write-Output \"::set-output name=value::$(Get-Content .\\package.json -Encoding UTF8 -Raw | ConvertFrom-Json | Select-Object -ExpandProperty version)\""
         shell: "pwsh"
       - name: "Setup NodeJS"
-        uses: "actions/setup-node@v2.4.1"
+        uses: "actions/setup-node@v2.5.0"
         with:
           node-version: 14
           check-latest: true
