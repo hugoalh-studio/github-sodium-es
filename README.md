@@ -1,4 +1,4 @@
-# GitHub Sodium (NodeJS Edition)
+# GitHub Sodium (NodeJS)
 
 [`GitHubSodium.NodeJS`](https://github.com/hugoalh-studio/github-sodium-nodejs)
 [![GitHub Contributors](https://img.shields.io/github/contributors/hugoalh-studio/github-sodium-nodejs?label=Contributors&logo=github&logoColor=ffffff&style=flat-square)](https://github.com/hugoalh-studio/github-sodium-nodejs/graphs/contributors)

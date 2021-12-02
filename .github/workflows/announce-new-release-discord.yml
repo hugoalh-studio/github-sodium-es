@@ -1,0 +1,41 @@
+# $<Schema>$ https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions
+name: "Announce New Release - Discord"
+on:
+  release:
+    types:
+      - "published"
+jobs:
+  announce-new-release-discord:
+    name: "Announce New Release - Discord"
+    runs-on: "ubuntu-latest"
+    steps:
+      - uses: "hugoalh/send-discord-webhook-ghaction@v4.0.0"
+        with:
+          key: "${{secrets.DISCORDWEBHOOK_HUGOALHSTUDIO_STUDIOANNOUNCEMENT_PROJECTNEWRELEASEANNOUNCER}}"
+          payload: |
+            {
+              "embeds": [
+                {
+                  "title": "GitHub Sodium (NodeJS)",
+                  "description": "Version ${{github.event.release.name}} (${{github.event.release.tag_name}}) is released and available on:",
+                  "color": "2,110,0",
+                  "thumbnail": {
+                    "url": "https://i.imgur.com/iVfV21H.png"
+                  },
+                  "fields": [
+                    {
+                      "name": "GitHub (& Changelog)",
+                      "value": "${{github.event.release.html_url}}"
+                    },
+                    {
+                      "name": "NPM",
+                      "value": "https://www.npmjs.com/package/@hugoalh/github-sodium"
+                    },
+                    {
+                      "name": "Repository",
+                      "value": "${{github.event.repository.html_url}}"
+                    }
+                  ]
+                }
+              ]
+            }

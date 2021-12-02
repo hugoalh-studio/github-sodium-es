@@ -1,6 +1,6 @@
 {
 	"name": "@hugoalh/github-sodium",
-	"version": "1.1.5",
+	"version": "1.1.6",
 	"description": "A module to provide an easier sodium for GitHub secret.",
 	"keywords": [
 		"github",

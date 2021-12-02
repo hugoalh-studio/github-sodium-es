@@ -11,32 +11,28 @@ jobs:
     steps:
       - name: "Checkout Repository"
         uses: "actions/checkout@v2.4.0"
-      - name: "Get Package Name"
-        id: "get-package-name"
-        run: "Write-Output \"::set-output name=value::$(Get-Content .\\package.json -Encoding UTF8 -Raw | ConvertFrom-Json | Select-Object -ExpandProperty name)\""
-        shell: "pwsh"
-      - name: "Get Package Version"
-        id: "get-package-version"
-        run: "Write-Output \"::set-output name=value::$(Get-Content .\\package.json -Encoding UTF8 -Raw | ConvertFrom-Json | Select-Object -ExpandProperty version)\""
+      - name: "Get Package Meta"
+        id: "get-package-meta"
+        run: |
+          $packageMeta = (Get-Content -Path .\package.json -Encoding utf8NoBOM -Raw | ConvertFrom-Json)
+          Write-Output -InputObject "::set-output name=name::$(Select-Object -InputObject $packageMeta -ExpandProperty name)"
+          Write-Output -InputObject "::set-output name=version::$(Select-Object -InputObject $packageMeta -ExpandProperty version)"
         shell: "pwsh"
       - name: "Setup NodeJS"
-        uses: "actions/setup-node@v2.4.1"
+        uses: "actions/setup-node@v2.5.0"
         with:
           node-version: 14
           check-latest: true
           registry-url: "https://registry.npmjs.org/"
       - name: "Publish To Tag @latest"
-        if: "${{github.event.release.prerelease == false || startsWith(steps.get-package-version.outputs.value, '0.')}}"
-        run: "npm publish"
-        env:
-          NODE_AUTH_TOKEN: "${{secrets.NPM_TOKEN}}"
-      - name: "Distribute To Tag @pre"
-        if: "${{github.event.release.prerelease == false || startsWith(steps.get-package-version.outputs.value, '0.')}}"
-        run: "npm dist-tag add \"${{steps.get-package-name.outputs.value}}@${{steps.get-package-version.outputs.value}}\" pre"
+        if: "${{github.event.release.prerelease == false || startsWith(steps.get-package-meta.outputs.version, '0.')}}"
+        run: |
+          npm publish
+          npm dist-tag add "${{steps.get-package-meta.outputs.name}}@${{steps.get-package-meta.outputs.version}}" pre
         env:
           NODE_AUTH_TOKEN: "${{secrets.NPM_TOKEN}}"
       - name: "Publish To Tag @pre"
-        if: "${{github.event.release.prerelease == true && !(startsWith(steps.get-package-version.outputs.value, '0.'))}}"
+        if: "${{github.event.release.prerelease == true && !(startsWith(steps.get-package-meta.outputs.version, '0.'))}}"
         run: "npm publish --tag pre"
         env:
           NODE_AUTH_TOKEN: "${{secrets.NPM_TOKEN}}"

@@ -1,5 +1,5 @@
 ---
-name: "Documentation Issue (Markdown Edition)"
+name: "Documentation Issue (Markdown)"
 about: "Report a documentation issue."
 labels: "📚documentation,🔵unconfirm"
 ---
