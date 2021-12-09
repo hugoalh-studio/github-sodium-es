@@ -1,6 +1,6 @@
 {
 	"name": "@hugoalh/github-sodium",
-	"version": "1.1.6",
+	"version": "1.2.0",
 	"description": "A module to provide an easier sodium for GitHub secret.",
 	"keywords": [
 		"github",
@@ -24,6 +24,7 @@
 		"url": "git+https://github.com/hugoalh-studio/github-sodium-nodejs.git"
 	},
 	"dependencies": {
+		"@hugoalh/advanced-determine": "^7.0.0",
 		"tweetsodium": "^0.0.5"
 	},
 	"engines": {
