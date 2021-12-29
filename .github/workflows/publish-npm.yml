@@ -19,7 +19,7 @@ jobs:
           Write-Output -InputObject "::set-output name=version::$(Select-Object -InputObject $packageMeta -ExpandProperty version)"
         shell: "pwsh"
       - name: "Setup NodeJS"
-        uses: "actions/setup-node@v2.5.0"
+        uses: "actions/setup-node@v2.5.1"
         with:
           node-version: 14
           check-latest: true
