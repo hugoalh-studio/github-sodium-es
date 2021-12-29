@@ -14,12 +14,12 @@ jobs:
       - name: "Get Package Meta"
         id: "get-package-meta"
         run: |
-          $packageMeta = (Get-Content -Path .\package.json -Encoding utf8NoBOM -Raw | ConvertFrom-Json)
-          Write-Output -InputObject "::set-output name=name::$(Select-Object -InputObject $packageMeta -ExpandProperty name)"
-          Write-Output -InputObject "::set-output name=version::$(Select-Object -InputObject $packageMeta -ExpandProperty version)"
+          [pscustomobject]$PackageMeta = (Get-Content -Path .\package.json -Encoding utf8NoBOM -Raw | ConvertFrom-Json)
+          Write-Host -Object "::set-output name=name::$($PackageMeta.name)"
+          Write-Host -Object "::set-output name=version::$($PackageMeta.version)"
         shell: "pwsh"
       - name: "Setup NodeJS"
-        uses: "actions/setup-node@v2.5.0"
+        uses: "actions/setup-node@v2.5.1"
         with:
           node-version: 14
           check-latest: true
