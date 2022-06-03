@@ -1,20 +1,13 @@
-export default GitHubSodium;
-/**
- * @class GitHubSodium
- * @description Encrypt value to GitHub secret value.
- */
-declare class GitHubSodium {
-    /**
-     * @constructor
-     * @param {string} publicKey Organization's or repository's public key, which need for encrypt value to secret value before create or update a secret.
-     */
-    constructor(publicKey: string);
-    /**
-     * @method
-     * @param {string} value Value that need to encrypt as secret value.
-     * @returns {string} An encrypted GitHub secret value.
-     */
-    encrypt(value: string): string;
-    #private;
+declare namespace _default {
+    export { GitHubSodiumSealer };
+    export { seal };
+    export { version as v };
+    export { version as ver };
+    export { version };
 }
+export default _default;
+import GitHubSodiumSealer from "./github-sodium-sealer.mjs";
+import seal from "./seal.mjs";
+export const version: 1;
+export { GitHubSodiumSealer, seal, version as v, version as ver };
 //# sourceMappingURL=main.d.mts.map

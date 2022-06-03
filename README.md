@@ -46,20 +46,27 @@ const githubSodium = require("@hugoalh/github-sodium");
 #### Use In ModuleJS
 
 ```js
-import githubSodium from "@hugoalh/github-sodium";
+/* Either */
+import * as githubSodium from "@hugoalh/github-sodium";// All
+import githubSodium from "@hugoalh/github-sodium";// All (>= v2.0.0)
+import { ... } from "@hugoalh/github-sodium";// Part / Tree-shake
 ```
 
 ### API
 
 #### Class
 
-- `GitHubSodium`
+- `GitHubSodiumSealer`
   - `@constructor(publicKey)`
   - `encrypt(value)`
+
+#### Function
+
+- `seal(publicKey, value)`
 
 ### Example
 
 ```js
-new GitHubSodium("base64-encoded-public-key").encrypt("plain-text-secret");
+new GitHubSodiumSealer("base64-encoded-public-key").encrypt("plain-text-secret");
 //=> "+ZYvJDZMHUfBkJdyq5Zm9SKqeuBQ4sj+6sfjlH4CgG0="
 ```
