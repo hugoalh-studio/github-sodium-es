@@ -1,6 +1,5 @@
 *
 !@types/**
-!example.js
 !lib/**
 !LICENSE.md
 !package.json

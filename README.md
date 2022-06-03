@@ -22,7 +22,7 @@
 
 A NodeJS module to provide an easier sodium for GitHub secret.
 
-This project is based on TweetSodium ([GitHub](https://github.com/github/tweetsodium))([NPM](https://www.npmjs.com/package/tweetsodium)) with optimization for GitHub secret.
+This project is based on LibSodiumJS ([GitHub](https://github.com/jedisct1/libsodium.js))([NPM](https://www.npmjs.com/package/libsodium))(for ModuleJS) and TweetSodium ([GitHub](https://github.com/github/tweetsodium))([NPM](https://www.npmjs.com/package/tweetsodium))(for CommonJS) with optimization for GitHub secret.
 
 ## 📚 Documentation
 
@@ -30,7 +30,8 @@ This project is based on TweetSodium ([GitHub](https://github.com/github/tweetso
 
 #### Install
 
-NodeJS (>= v14.15.0) + NPM (>= v6.14.8):
+- NodeJS >= v14.15.0
+- NPM >= v6.14.8
 
 ```sh
 npm install @hugoalh/github-sodium
@@ -50,16 +51,15 @@ import githubSodium from "@hugoalh/github-sodium";
 
 ### API
 
-```ts
-githubSodium(// Encrypt value to GitHub secret value.
-  publicKey: string,// Organization's or repository's public key, which need for encrypt value to secret value before create or update a secret.
-  value: string// Value that need to encrypt as secret value.
-): string// An encrypted GitHub secret value.
-```
+#### Class
+
+- `GitHubSodium`
+  - `@constructor(publicKey)`
+  - `encrypt(value)`
 
 ### Example
 
 ```js
-githubSodium("base64-encoded-public-key", "plain-text-secret");
+new GitHubSodium("base64-encoded-public-key").encrypt("plain-text-secret");
 //=> "+ZYvJDZMHUfBkJdyq5Zm9SKqeuBQ4sj+6sfjlH4CgG0="
 ```
