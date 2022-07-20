@@ -11,7 +11,7 @@
 [![CodeFactor Grade](https://img.shields.io/codefactor/grade/github/hugoalh-studio/github-sodium-nodejs?label=Grade&logo=codefactor&logoColor=ffffff&style=flat-square)](https://www.codefactor.io/repository/github/hugoalh-studio/github-sodium-nodejs)
 [![LGTM Alerts](https://img.shields.io/lgtm/alerts/g/hugoalh-studio/github-sodium-nodejs?label=Alerts&logo=lgtm&logoColor=ffffff&style=flat-square)
 ![LGTM Grade](https://img.shields.io/lgtm/grade/javascript/g/hugoalh-studio/github-sodium-nodejs?label=Grade&logo=lgtm&logoColor=ffffff&style=flat-square)](https://lgtm.com/projects/g/hugoalh-studio/github-sodium-nodejs)
-[![License](https://img.shields.io/static/v1?label=License&message=MIT&color=brightgreen&style=flat-square)](./LICENSE.md)
+[![License](https://img.shields.io/static/v1?label=License&message=MIT&style=flat-square)](./LICENSE.md)
 
 | **Release** | **Latest** (![GitHub Latest Release Date](https://img.shields.io/github/release-date/hugoalh-studio/github-sodium-nodejs?label=%20&style=flat-square)) | **Pre** (![GitHub Latest Pre-Release Date](https://img.shields.io/github/release-date-pre/hugoalh-studio/github-sodium-nodejs?label=%20&style=flat-square)) |
 |:-:|:-:|:-:|
