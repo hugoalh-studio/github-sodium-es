@@ -22,7 +22,7 @@
 
 A NodeJS module to provide an easier sodium for GitHub secret.
 
-This project is based on LibSodiumJS ([GitHub](https://github.com/jedisct1/libsodium.js))([NPM](https://www.npmjs.com/package/libsodium))(for ModuleJS) and TweetSodium ([GitHub](https://github.com/github/tweetsodium))([NPM](https://www.npmjs.com/package/tweetsodium))(for CommonJS) with optimization for GitHub secret.
+This project is based on `libsodium.js` ([GitHub](https://github.com/jedisct1/libsodium.js))([NPM](https://www.npmjs.com/package/libsodium))(for ModuleJS) and `tweetsodium` ([GitHub](https://github.com/github/tweetsodium))([NPM](https://www.npmjs.com/package/tweetsodium))(for CommonJS) with optimization for GitHub secret.
 
 ## 📚 Documentation
 
