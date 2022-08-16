@@ -7,12 +7,10 @@
 		"emitDeclarationOnly": true,
 		"module": "esnext",
 		"moduleResolution": "node",
-		"outDir": "./@types",
 		"target": "ESNext"
 	},
 	"include": [
-		"./lib/**/*.js",
-		"./lib/**/*.mjs",
-		"./lib/**/*.ts"
+		"./lib/main.js",
+		"./lib/main.mjs"
 	]
 }

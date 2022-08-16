@@ -1,5 +1,4 @@
 *
-!@types/**
 !lib/**
 !LICENSE.md
 !package.json
