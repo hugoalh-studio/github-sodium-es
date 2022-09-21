@@ -18,9 +18,9 @@
 
 ## 📝 Description
 
-A NodeJS module to provide an easier sodium for GitHub secret.
+A NodeJS module to provide an easier sodium for GitHub secrets.
 
-This project is based on `libsodium.js` ([GitHub](https://github.com/jedisct1/libsodium.js))([NPM](https://www.npmjs.com/package/libsodium)) with optimization for GitHub secret.
+This project is based on `libsodium.js` ([GitHub](https://github.com/jedisct1/libsodium.js))([NPM](https://www.npmjs.com/package/libsodium)) with optimization for GitHub secrets.
 
 ## 📚 Documentation
 
