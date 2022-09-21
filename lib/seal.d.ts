@@ -1,4 +1,4 @@
-export = seal;
+export default seal;
 /**
  * @function seal
  * @param {string} publicKey Organization's or repository's public key, which need for encrypt value to secret value before create or update a secret.

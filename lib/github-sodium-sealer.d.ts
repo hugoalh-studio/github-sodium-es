@@ -1,4 +1,4 @@
-export = GitHubSodiumSealer;
+export default GitHubSodiumSealer;
 /**
  * @class GitHubSodiumSealer
  * @description Encrypt value to GitHub secret value.
