@@ -18,7 +18,7 @@ jobs:
           Write-Host -Object "::set-output name=version::$($PackageMeta.version)"
         shell: "pwsh"
       - name: "Setup NodeJS"
-        uses: "actions/setup-node@v3.4.1"
+        uses: "actions/setup-node@v3.5.0"
         with:
           node-version: 14
           check-latest: true
