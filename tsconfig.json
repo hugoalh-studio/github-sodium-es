@@ -4,12 +4,17 @@
 		"allowJs": true,
 		"declaration": true,
 		"declarationMap": true,
-		"emitDeclarationOnly": true,
-		"module": "esnext",
-		"moduleResolution": "node",
-		"target": "ESNext"
+		"emitBOM": false,
+		"emitDeclarationOnly": false,
+		"esModuleInterop": true,
+		"module": "NodeNext",
+		"moduleResolution": "NodeNext",
+		"newLine": "crlf",
+		"noImplicitUseStrict": true,
+		"outDir": "./dist",
+		"target": "ES2019"
 	},
 	"include": [
-		"./lib/main.js"
+		"./src/**/*.ts"
 	]
 }

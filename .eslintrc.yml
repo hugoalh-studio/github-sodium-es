@@ -29,6 +29,8 @@ env:
   worker: true
 extends:
   - "eslint:all"
+  - "plugin:@typescript-eslint/recommended"
+parser: "@typescript-eslint/parser"
 parserOptions:
   ecmaFeatures:
     arrowFunctions: true
@@ -56,6 +58,7 @@ parserOptions:
   ecmaVersion: "latest"
   sourceType: "module"
 plugins:
+  - "@typescript-eslint"
   - "only-warn"
 rules:
   array-element-newline:

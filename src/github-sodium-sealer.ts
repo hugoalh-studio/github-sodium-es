@@ -6,12 +6,12 @@ await libsodium.ready;
  * @description Encrypt value to GitHub secret value.
  */
 class GitHubSodiumSealer {
-	#publicKeyStorage;
+	#publicKeyStorage: Buffer;
 	/**
 	 * @constructor
 	 * @param {string} publicKey Organization's or repository's public key, which need for encrypt value to secret value before create or update a secret.
 	 */
-	constructor(publicKey) {
+	constructor(publicKey: string) {
 		if (!adIsString(publicKey, { empty: false })) {
 			throw new TypeError(`Argument \`publicKey\` must be type of string (non-empty)!`);
 		}
@@ -22,7 +22,7 @@ class GitHubSodiumSealer {
 	 * @param {string} value Value that need to encrypt as secret value.
 	 * @returns {string} An encrypted GitHub secret value.
 	 */
-	encrypt(value) {
+	encrypt(value: string): string {
 		if (!adIsString(value, { empty: false })) {
 			throw new TypeError(`Argument \`value\` must be type of string (non-empty)!`);
 		}
