@@ -13,6 +13,7 @@ jobs:
       - name: "Modify PowerShell Repository"
         run: |
           Set-PSRepository -Name 'PSGallery' -InstallationPolicy 'Trusted' -Verbose
+        shell: "pwsh"
       - name: "Setup GitHub Actions PowerShell Toolkit"
         run: |
           Install-Module -Name 'hugoalh.GitHubActionsToolkit' -MinimumVersion '1.1.1' -Scope 'AllUsers' -AcceptLicense -Confirm:$False -Verbose
