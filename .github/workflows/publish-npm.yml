@@ -16,7 +16,7 @@ jobs:
         shell: "pwsh"
       - name: "Setup GitHub Actions PowerShell Toolkit"
         run: |
-          Install-Module -Name 'hugoalh.GitHubActionsToolkit' -MinimumVersion '1.1.1' -Scope 'AllUsers' -AcceptLicense -Confirm:$False -Verbose
+          Install-Module -Name 'hugoalh.GitHubActionsToolkit' -MinimumVersion '1.1.1' -Scope 'CurrentUser' -AcceptLicense -Confirm:$False -Verbose
         shell: "pwsh"
       - name: "Get Package Meta"
         id: "get-package-meta"
