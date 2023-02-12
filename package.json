@@ -1,40 +1,45 @@
 {
-	"name": "@hugoalh/github-sodium",
-	"version": "3.0.1",
-	"description": "A module to provide an easier sodium for GitHub secrets.",
-	"keywords": [
-		"github",
-		"sodium"
-	],
-	"homepage": "https://github.com/hugoalh-studio/github-sodium-nodejs#readme",
-	"bugs": {
-		"url": "https://github.com/hugoalh-studio/github-sodium-nodejs/issues"
-	},
-	"license": "MIT",
-	"author": "hugoalh",
-	"type": "module",
-	"main": "./lib/main.js",
-	"exports": {
-		"import": "./lib/main.js"
-	},
-	"types": "./lib/main.d.ts",
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/hugoalh-studio/github-sodium-nodejs.git"
-	},
-	"dependencies": {
-		"@hugoalh/advanced-determine": "^7.2.0",
-		"libsodium-wrappers": "^0.7.10"
-	},
-	"devDependencies": {
-		"@types/libsodium-wrappers": "^0.7.10",
-		"@types/node": "^18.11.19",
-		"eslint": "^8.33.0",
-		"eslint-plugin-only-warn": "^1.1.0",
-		"typescript": "^4.9.5"
-	},
-	"engines": {
-		"node": "^12.20.0 || ^14.15.0 || >=16.13.0"
-	},
-	"private": false
+  "name": "@hugoalh/github-sodium",
+  "version": "3.0.1",
+  "description": "A module to provide an easier sodium for GitHub secrets.",
+  "keywords": [
+    "github",
+    "sodium"
+  ],
+  "homepage": "https://github.com/hugoalh-studio/github-sodium-nodejs#readme",
+  "bugs": {
+    "url": "https://github.com/hugoalh-studio/github-sodium-nodejs/issues"
+  },
+  "license": "MIT",
+  "author": "hugoalh",
+  "type": "module",
+  "main": "./lib/main.js",
+  "exports": {
+    "import": "./lib/main.js"
+  },
+  "types": "./lib/main.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hugoalh-studio/github-sodium-nodejs.git"
+  },
+  "bin": {
+    "github-sodium": "./lib/cli.js"
+  },
+  "dependencies": {
+    "@hugoalh/advanced-determine": "^7.2.0",
+    "dashdash": "^2.0.0",
+    "libsodium-wrappers": "^0.7.10",
+    "octokit": "^2.0.14"
+  },
+  "devDependencies": {
+    "@types/libsodium-wrappers": "^0.7.10",
+    "@types/node": "^18.11.19",
+    "eslint": "^8.33.0",
+    "eslint-plugin-only-warn": "^1.1.0",
+    "typescript": "^4.9.5"
+  },
+  "engines": {
+    "node": "^12.20.0 || ^14.15.0 || >=16.13.0"
+  },
+  "private": false
 }
