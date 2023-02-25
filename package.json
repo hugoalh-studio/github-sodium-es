@@ -23,13 +23,13 @@
 		"url": "git+https://github.com/hugoalh-studio/github-sodium-nodejs.git"
 	},
 	"dependencies": {
-		"@hugoalh/advanced-determine": "^7.2.0",
-		"libsodium-wrappers": "^0.7.10"
+		"@hugoalh/advanced-determine": "^10.0.0",
+		"libsodium-wrappers": "^0.7.11"
 	},
 	"devDependencies": {
 		"@types/libsodium-wrappers": "^0.7.10",
-		"@types/node": "^18.11.19",
-		"eslint": "^8.33.0",
+		"@types/node": "^18.14.1",
+		"eslint": "^8.34.0",
 		"eslint-plugin-only-warn": "^1.1.0",
 		"typescript": "^4.9.5"
 	},
