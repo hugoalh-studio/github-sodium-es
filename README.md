@@ -51,7 +51,7 @@ import { ... } from "@hugoalh/github-sodium";// Part / Tree-shake
 
 ```ts
 GitHubSodiumSealer(publicKey: string): GitHubSodiumSealer;
-GitHubSodiumSealer.encrypt(value: string): string;
+  .encrypt(value: string): string;
 ```
 
 </li>
