@@ -4,12 +4,24 @@
 		"allowJs": true,
 		"declaration": true,
 		"declarationMap": true,
-		"emitDeclarationOnly": true,
-		"module": "esnext",
-		"moduleResolution": "node",
-		"target": "ESNext"
+		"emitBOM": false,
+		"emitDeclarationOnly": false,
+		"esModuleInterop": true,
+		"forceConsistentCasingInFileNames": true,
+		"lib": [
+			"es2019",
+			"es2020.bigint",
+			"es2020.promise",
+			"es2020.string"
+		],
+		"module": "NodeNext",
+		"moduleResolution": "NodeNext",
+		"newLine": "crlf",
+		"noImplicitUseStrict": true,
+		"outDir": "./dist",
+		"target": "ES2019"
 	},
 	"include": [
-		"./lib/main.js"
+		"./src/**/*.ts"
 	]
 }

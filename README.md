@@ -47,23 +47,14 @@ import { ... } from "@hugoalh/github-sodium";// Part / Tree-shake
 #### Class
 
 <ul>
-<li><code>GitHubSodiumSealer</code></li>
-<ul>
 <li>
 
 ```ts
-@constructor(publicKey: string): GitHubSodiumSealer
+GitHubSodiumSealer(publicKey: string): GitHubSodiumSealer;
+GitHubSodiumSealer.encrypt(value: string): string;
 ```
 
 </li>
-<li>
-
-```ts
-encrypt(value: string): string
-```
-
-</li>
-</ul>
 </ul>
 
 #### Function
@@ -72,7 +63,7 @@ encrypt(value: string): string
 <li>
 
 ```ts
-seal(publicKey: string, value: string): string
+seal(publicKey: string, value: string): string;
 ```
 
 </li>

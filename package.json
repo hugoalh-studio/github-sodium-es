@@ -13,11 +13,11 @@
 	"license": "MIT",
 	"author": "hugoalh",
 	"type": "module",
-	"main": "./lib/main.js",
+	"main": "./dist/main.js",
 	"exports": {
-		"import": "./lib/main.js"
+		"import": "./dist/main.js"
 	},
-	"types": "./lib/main.d.ts",
+	"types": "./dist/main.d.ts",
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/hugoalh-studio/github-sodium-nodejs.git"
@@ -29,6 +29,8 @@
 	"devDependencies": {
 		"@types/libsodium-wrappers": "^0.7.10",
 		"@types/node": "^18.14.1",
+		"@typescript-eslint/eslint-plugin": "^5.53.0",
+		"@typescript-eslint/parser": "^5.53.0",
 		"eslint": "^8.34.0",
 		"eslint-plugin-only-warn": "^1.1.0",
 		"typescript": "^4.9.5"

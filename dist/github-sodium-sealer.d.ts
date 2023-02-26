@@ -1,9 +1,9 @@
-export default GitHubSodiumSealer;
 /**
  * @class GitHubSodiumSealer
  * @description Encrypt value to GitHub secret value.
  */
 declare class GitHubSodiumSealer {
+    #private;
     /**
      * @constructor
      * @param {string} publicKey Organization's or repository's public key, which need for encrypt value to secret value before create or update a secret.
@@ -15,6 +15,6 @@ declare class GitHubSodiumSealer {
      * @returns {string} An encrypted GitHub secret value.
      */
     encrypt(value: string): string;
-    #private;
 }
+export default GitHubSodiumSealer;
 //# sourceMappingURL=github-sodium-sealer.d.ts.map
