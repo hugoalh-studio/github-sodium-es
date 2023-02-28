@@ -30,7 +30,7 @@
 		"@types/libsodium-wrappers": "^0.7.10",
 		"@types/node": "^18.14.2",
 		"@typescript-eslint/eslint-plugin": "^5.53.0",
-		"@typescript-eslint/parser": "^5.53.0",
+		"@typescript-eslint/parser": "^5.54.0",
 		"eslint": "^8.35.0",
 		"eslint-plugin-only-warn": "^1.1.0",
 		"typescript": "^4.9.5"
