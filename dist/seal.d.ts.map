@@ -1,1 +1,1 @@
-{"version":3,"file":"seal.d.ts","sourceRoot":"","sources":["../src/seal.ts"],"names":[],"mappings":"AACA;;;;;GAKG;AACH,iBAAS,IAAI,CAAC,SAAS,EAAE,MAAM,EAAE,KAAK,EAAE,MAAM,GAAG,MAAM,CAEtD;AACD,eAAe,IAAI,CAAC"}
+{"version":3,"file":"seal.d.ts","sourceRoot":"","sources":["../src/seal.ts"],"names":[],"mappings":"AACA;;;;;;GAMG;AACH,iBAAS,IAAI,CAAC,SAAS,EAAE,MAAM,EAAE,KAAK,EAAE,MAAM,GAAG,MAAM,CAEtD;AACD,eAAe,IAAI,CAAC"}
