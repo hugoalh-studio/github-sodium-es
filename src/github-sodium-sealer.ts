@@ -19,7 +19,7 @@ class GitHubSodiumSealer {
 		this.#publicKeyStorage = Buffer.from(publicKey, "base64");
 	}
 	/**
-	 * @method
+	 * @method encrypt
 	 * @param {string} value Value that need to encrypt as secret value.
 	 * @returns {string} An encrypted GitHub secret value.
 	 */

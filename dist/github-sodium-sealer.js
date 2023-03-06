@@ -31,7 +31,7 @@ class GitHubSodiumSealer {
         __classPrivateFieldSet(this, _GitHubSodiumSealer_publicKeyStorage, Buffer.from(publicKey, "base64"), "f");
     }
     /**
-     * @method
+     * @method encrypt
      * @param {string} value Value that need to encrypt as secret value.
      * @returns {string} An encrypted GitHub secret value.
      */
