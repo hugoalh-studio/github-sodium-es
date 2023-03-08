@@ -10,39 +10,77 @@ jobs:
     steps:
       - name: "Checkout Repository"
         uses: "actions/checkout@v3.3.0"
-      - name: "Modify PowerShell Repository"
-        run: |
-          Set-PSRepository -Name 'PSGallery' -InstallationPolicy 'Trusted' -Verbose
-        shell: "pwsh"
-      - name: "Setup GitHub Actions PowerShell Toolkit"
-        run: |
-          Install-Module -Name 'hugoalh.GitHubActionsToolkit' -MinimumVersion '1.2.1' -Scope 'CurrentUser' -AcceptLicense -Confirm:$False -Verbose
-        shell: "pwsh"
-      - name: "Get Package Meta"
-        id: "get-package-meta"
-        run: |
-          Import-Module -Name 'hugoalh.GitHubActionsToolkit' -Scope 'Local'
-          [PSCustomObject]$PackageMeta = Get-Content -Path '.\package.json' -Raw -Encoding 'UTF8NoBOM' |
-            ConvertFrom-Json -Depth 100
-          Set-GitHubActionsOutput -Name 'name' -Value $PackageMeta.name
-          Set-GitHubActionsOutput -Name 'version' -Value $PackageMeta.version
-        shell: "pwsh"
       - name: "Setup NodeJS"
         uses: "actions/setup-node@v3.6.0"
         with:
           node-version: "lts/*"
           check-latest: true
           registry-url: "https://registry.npmjs.org/"
-      - name: "Publish To Tag @latest"
+      - name: "Setup PowerShell Toolkit"
+        uses: "hugoalh-studio/setup-powershell-toolkit-ghaction@v1.0.0"
+      - name: "Get Package Meta"
+        id: "get-package-meta"
+        run: |
+          Import-Module -Name 'hugoalh.GitHubActionsToolkit' -Scope 'Local'
+          [PSCustomObject]$PackageMeta = Get-Content -LiteralPath '.\package.json' -Raw -Encoding 'UTF8NoBOM' |
+            ConvertFrom-Json -Depth 100
+          Set-GitHubActionsOutput -Name 'name' -Value $PackageMeta.name
+          Set-GitHubActionsOutput -Name 'version' -Value $PackageMeta.version
+          [String[]]$PackageDevDependencies = ($PackageMeta)?.devDependencies.PSObject.Properties.Name ?? @()
+          [Boolean]$BuildTypeScript = ('typescript' -iin $PackageDevDependencies) -and ('@typescript-eslint/eslint-plugin' -iin $PackageDevDependencies) -and ('@typescript-eslint/parser' -iin $PackageDevDependencies) -and !(Test-Path -LiteralPath '.\dist') -and (Test-Path -LiteralPath '.\src') -and (Test-Path -LiteralPath '.\tsconfig.json')
+          Set-GitHubActionsOutput -Name 'build_typescript' -Value $BuildTypeScript.ToString().ToLower()
+          [String]$PackageTarballName = "$($PackageMeta.name -ireplace '^@', '' -ireplace '\/', '-')-$($PackageMeta.version).tgz"
+          [PSCustomObject]$Payload = Get-GitHubActionsWebhookEventPayload
+          Set-GitHubActionsOutput -Name 'assets_tarballname' -Value $PackageTarballName
+          Set-GitHubActionsOutput -Name 'assets_uploadurl' -Value $Payload.release.upload_url
+          [Boolean]$BuildAssetsTarball = $PackageTarballName -inotin (
+            $Payload.release.assets |
+              Select-Object -ExpandProperty 'name'
+          )
+          Set-GitHubActionsOutput -Name 'build_assetstarball' -Value $BuildAssetsTarball.ToString().ToLower()
+        shell: "pwsh"
+      - name: "Setup PNPM"
+        if: "${{steps.get-package-meta.outputs.build_typescript == 'true' || steps.get-package-meta.outputs.build_assetstarball == 'true'}}"
+        run: |
+          npm --global install pnpm
+      - name: "Build From TypeScript"
+        if: "${{steps.get-package-meta.outputs.build_typescript == 'true'}}"
+        run: |
+          Import-Module -Name 'hugoalh.GitHubActionsToolkit' -Scope 'Local'
+          pnpm install
+          $TscPath = Resolve-Path -LiteralPath '.\node_modules\.bin\tsc.ps1'
+          $ConfigPath = Resolve-Path -LiteralPath '.\tsconfig.json'
+          If (Test-Path -LiteralPath '.\dist') {
+            Remove-Item -LiteralPath '.\dist' -Recurse -Force -Confirm:$False
+          }
+          Invoke-Expression -Command "$($TscPath.Path) -p $($ConfigPath.Path)"
+        shell: "pwsh"
+      - name: "Publish To Tag `latest`"
         if: "${{github.event.release.prerelease == false || startsWith(steps.get-package-meta.outputs.version, '0.')}}"
         run: |
           npm publish
           npm dist-tag add "${{steps.get-package-meta.outputs.name}}@${{steps.get-package-meta.outputs.version}}" pre
         env:
           NODE_AUTH_TOKEN: "${{secrets.NPM_TOKEN}}"
-      - name: "Publish To Tag @pre"
+      - name: "Publish To Tag `pre`"
         if: "${{github.event.release.prerelease == true && !(startsWith(steps.get-package-meta.outputs.version, '0.'))}}"
         run: |
           npm publish --tag pre
         env:
           NODE_AUTH_TOKEN: "${{secrets.NPM_TOKEN}}"
+      - name: "Build Tarball"
+        if: "${{steps.get-package-meta.outputs.build_assetstarball == 'true'}}"
+        run: |
+          Import-Module -Name 'hugoalh.GitHubActionsToolkit' -Scope 'Local'
+          pnpm pack
+          Try {
+            Invoke-WebRequest -Uri "${{steps.get-package-meta.outputs.assets_uploadurl}}?name=${{steps.get-package-meta.outputs.assets_tarballname}}" -UserAgent $Env:GITHUB_WORKFLOW_REF -Headers @{
+              Accept = 'application/vnd.github+json'
+              Authorization = 'Bearer ${{github.token}}'
+              'X-GitHub-Api-Version' = '2022-11-28'
+            } -Method 'Post' -ContentType 'application/gzip' -InFile '.\${{steps.get-package-meta.outputs.assets_tarballname}}'
+          }
+          Catch {
+            Write-GitHubActionsError -Message "Unable to upload assets tarball: $_"
+          }
+        shell: "pwsh"
