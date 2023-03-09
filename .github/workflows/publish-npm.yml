@@ -32,7 +32,7 @@ jobs:
           [String]$PackageTarballName = "$($PackageMeta.name -ireplace '^@', '' -ireplace '\/', '-')-$($PackageMeta.version).tgz"
           [PSCustomObject]$Payload = Get-GitHubActionsWebhookEventPayload
           Set-GitHubActionsOutput -Name 'assets_tarballname' -Value $PackageTarballName
-          Set-GitHubActionsOutput -Name 'assets_uploadurl' -Value $Payload.release.upload_url
+          Set-GitHubActionsOutput -Name 'assets_uploadurl' -Value ($Payload.release.upload_url -ireplace '\{.+?\}$', '')
           [Boolean]$BuildAssetsTarball = $PackageTarballName -inotin (
             $Payload.release.assets |
               Select-Object -ExpandProperty 'name'
