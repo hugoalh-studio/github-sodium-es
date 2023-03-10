@@ -38,7 +38,6 @@ npm install @hugoalh/github-sodium
 ```js
 /* Either */
 import * as githubSodium from "@hugoalh/github-sodium";// All
-import githubSodium from "@hugoalh/github-sodium";// All (>= v2.0.0)
 import { ... } from "@hugoalh/github-sodium";// Part / Tree-shake
 ```
 
@@ -50,7 +49,7 @@ import { ... } from "@hugoalh/github-sodium";// Part / Tree-shake
 <li>
 
 ```ts
-GitHubSodiumSealer(publicKey: string): GitHubSodiumSealer;
+new GitHubSodiumSealer(publicKey: string): GitHubSodiumSealer;
   .encrypt(value: string): string;
 ```
 
