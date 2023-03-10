@@ -24,19 +24,19 @@ jobs:
           Import-Module -Name 'hugoalh.GitHubActionsToolkit' -Scope 'Local'
           [PSCustomObject]$PackageMeta = Get-Content -LiteralPath '.\package.json' -Raw -Encoding 'UTF8NoBOM' |
             ConvertFrom-Json -Depth 100
-          Set-GitHubActionsOutput -Name 'name' -Value $PackageMeta.name
-          Set-GitHubActionsOutput -Name 'version' -Value $PackageMeta.version
-          [String[]]$PackageDevDependencies = ($PackageMeta)?.devDependencies.PSObject.Properties.Name ?? @()
-          [Boolean]$BuildTypeScript = ('typescript' -iin $PackageDevDependencies) -and ('@typescript-eslint/eslint-plugin' -iin $PackageDevDependencies) -and ('@typescript-eslint/parser' -iin $PackageDevDependencies) -and !(Test-Path -LiteralPath '.\dist') -and (Test-Path -LiteralPath '.\src') -and (Test-Path -LiteralPath '.\tsconfig.json')
-          Set-GitHubActionsOutput -Name 'build_typescript' -Value $BuildTypeScript.ToString().ToLower()
+          [String[]]$PackageDevDependencies = $PackageMeta.devDependencies.PSObject.Properties.Name ?? @()
           [String]$PackageTarballName = "$($PackageMeta.name -ireplace '^@', '' -ireplace '\/', '-')-$($PackageMeta.version).tgz"
           [PSCustomObject]$Payload = Get-GitHubActionsWebhookEventPayload
-          Set-GitHubActionsOutput -Name 'assets_tarballname' -Value $PackageTarballName
-          Set-GitHubActionsOutput -Name 'assets_uploadurl' -Value ($Payload.release.upload_url -ireplace '\{.+?\}$', '')
+          [Boolean]$BuildTypeScript = ('typescript' -iin $PackageDevDependencies) -and ('@typescript-eslint/eslint-plugin' -iin $PackageDevDependencies) -and ('@typescript-eslint/parser' -iin $PackageDevDependencies) -and !(Test-Path -LiteralPath '.\dist') -and (Test-Path -LiteralPath '.\src') -and (Test-Path -LiteralPath '.\tsconfig.json')
           [Boolean]$BuildAssetsTarball = $PackageTarballName -inotin (
             $Payload.release.assets |
               Select-Object -ExpandProperty 'name'
           )
+          Set-GitHubActionsOutput -Name 'name' -Value $PackageMeta.name
+          Set-GitHubActionsOutput -Name 'version' -Value $PackageMeta.version
+          Set-GitHubActionsOutput -Name 'assets_tarballname' -Value $PackageTarballName
+          Set-GitHubActionsOutput -Name 'assets_uploadurl' -Value ($Payload.release.upload_url -ireplace '\{.+?\}$', '')
+          Set-GitHubActionsOutput -Name 'build_typescript' -Value $BuildTypeScript.ToString().ToLower()
           Set-GitHubActionsOutput -Name 'build_assetstarball' -Value $BuildAssetsTarball.ToString().ToLower()
         shell: "pwsh"
       - name: "Setup PNPM"
@@ -68,17 +68,19 @@ jobs:
           npm publish --tag pre
         env:
           NODE_AUTH_TOKEN: "${{secrets.NPM_TOKEN}}"
-      - name: "Build Tarball"
+      - name: "Build & Upload Assets Tarball"
         if: "${{steps.get-package-meta.outputs.build_assetstarball == 'true'}}"
         run: |
           Import-Module -Name 'hugoalh.GitHubActionsToolkit' -Scope 'Local'
           pnpm pack
           Try {
-            Invoke-WebRequest -Uri "${{steps.get-package-meta.outputs.assets_uploadurl}}?name=${{steps.get-package-meta.outputs.assets_tarballname}}" -UserAgent $Env:GITHUB_WORKFLOW_REF -Headers @{
+            Invoke-WebRequest -Uri "${{steps.get-package-meta.outputs.assets_uploadurl}}?name=$([Uri]::EscapeDataString('${{steps.get-package-meta.outputs.assets_tarballname}}'))" -Headers @{
               Accept = 'application/vnd.github+json'
               Authorization = 'Bearer ${{github.token}}'
+              'Content-Type' = 'application/gzip'
+              'User-Agent' = $Env:GITHUB_WORKFLOW_REF
               'X-GitHub-Api-Version' = '2022-11-28'
-            } -Method 'Post' -ContentType 'application/gzip' -InFile '.\${{steps.get-package-meta.outputs.assets_tarballname}}'
+            } -Method 'Post' -InFile '.\${{steps.get-package-meta.outputs.assets_tarballname}}' -SkipHeaderValidation
           }
           Catch {
             Write-GitHubActionsError -Message "Unable to upload assets tarball: $_"
