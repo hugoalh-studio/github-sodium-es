@@ -37,8 +37,9 @@ npm install @hugoalh/github-sodium
 
 ```js
 /* Either */
-import * as githubSodium from "@hugoalh/github-sodium";// All
-import { ... } from "@hugoalh/github-sodium";// Part / Tree-shake
+import { ... } from "@hugoalh/github-sodium";// Named Import
+import * as githubSodium from "@hugoalh/github-sodium";// Namespace Import
+import githubSodium from "@hugoalh/github-sodium";// Default Import
 ```
 
 ### API
@@ -71,6 +72,6 @@ seal(publicKey: string, value: string): string;
 ### Example
 
 ```js
-new GitHubSodiumSealer("base64-encoded-public-key").encrypt("plain-text-secret");
+new githubSodium.GitHubSodiumSealer("base64-encoded-public-key").encrypt("plain-text-secret");
 //=> "+ZYvJDZMHUfBkJdyq5Zm9SKqeuBQ4sj+6sfjlH4CgG0="
 ```
