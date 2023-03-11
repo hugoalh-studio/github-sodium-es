@@ -72,6 +72,6 @@ seal(publicKey: string, value: string): string;
 ### Example
 
 ```js
-new githubSodium.GitHubSodiumSealer("base64-encoded-public-key").encrypt("plain-text-secret");
+new GitHubSodiumSealer("base64-encoded-public-key").encrypt("plain-text-secret");
 //=> "+ZYvJDZMHUfBkJdyq5Zm9SKqeuBQ4sj+6sfjlH4CgG0="
 ```
