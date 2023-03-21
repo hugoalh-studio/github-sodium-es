@@ -3,6 +3,9 @@ on:
   release:
     types:
       - "published"
+defaults:
+  run:
+    shell: "pwsh"
 jobs:
   publish-npm:
     name: "Publish - NPM"
@@ -38,9 +41,8 @@ jobs:
           Set-GitHubActionsOutput -Name 'assets_uploadurl' -Value ($Payload.release.upload_url -ireplace '\{.+?\}$', '')
           Set-GitHubActionsOutput -Name 'build_typescript' -Value $BuildTypeScript.ToString().ToLower()
           Set-GitHubActionsOutput -Name 'build_assetstarball' -Value $BuildAssetsTarball.ToString().ToLower()
-        shell: "pwsh"
       - name: "Setup PNPM"
-        if: "${{steps.get-package-meta.outputs.build_typescript == 'true' || steps.get-package-meta.outputs.build_assetstarball == 'true'}}"
+        if: "${{(steps.get-package-meta.outputs.build_typescript == 'true') || (steps.get-package-meta.outputs.build_assetstarball == 'true')}}"
         run: |
           npm --global install pnpm
       - name: "Build From TypeScript"
@@ -54,16 +56,15 @@ jobs:
             Remove-Item -LiteralPath '.\dist' -Recurse -Force -Confirm:$False
           }
           Invoke-Expression -Command "$($TscPath.Path) -p $($ConfigPath.Path)"
-        shell: "pwsh"
       - name: "Publish To Tag `latest`"
-        if: "${{github.event.release.prerelease == false || startsWith(steps.get-package-meta.outputs.version, '0.')}}"
+        if: "${{(github.event.release.prerelease == false) || startsWith(steps.get-package-meta.outputs.version, '0.')}}"
         run: |
           npm publish
           npm dist-tag add "${{steps.get-package-meta.outputs.name}}@${{steps.get-package-meta.outputs.version}}" pre
         env:
           NODE_AUTH_TOKEN: "${{secrets.NPM_TOKEN}}"
       - name: "Publish To Tag `pre`"
-        if: "${{github.event.release.prerelease == true && !(startsWith(steps.get-package-meta.outputs.version, '0.'))}}"
+        if: "${{(github.event.release.prerelease == true) && !startsWith(steps.get-package-meta.outputs.version, '0.')}}"
         run: |
           npm publish --tag pre
         env:
@@ -85,4 +86,3 @@ jobs:
           Catch {
             Write-GitHubActionsError -Message "Unable to upload assets tarball: $_"
           }
-        shell: "pwsh"
