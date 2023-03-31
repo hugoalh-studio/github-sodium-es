@@ -53,4 +53,4 @@ class GitHubSodiumSealer {
     }
 }
 _GitHubSodiumSealer_publicKeyStorage = new WeakMap();
-export default GitHubSodiumSealer;
+export { GitHubSodiumSealer };

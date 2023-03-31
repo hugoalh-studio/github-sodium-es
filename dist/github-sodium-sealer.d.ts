@@ -24,5 +24,5 @@ declare class GitHubSodiumSealer {
      */
     static seal(publicKey: string, value: string): string;
 }
-export default GitHubSodiumSealer;
+export { GitHubSodiumSealer };
 //# sourceMappingURL=github-sodium-sealer.d.ts.map
