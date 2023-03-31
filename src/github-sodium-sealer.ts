@@ -40,4 +40,6 @@ class GitHubSodiumSealer {
 		return new this(publicKey).encrypt(value);
 	}
 }
-export default GitHubSodiumSealer;
+export {
+	GitHubSodiumSealer
+};

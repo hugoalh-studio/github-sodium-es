@@ -27,7 +27,7 @@ This project is based on `libsodium.js` ([GitHub](https://github.com/jedisct1/li
 
 #### Install
 
-- NodeJS ^ v12.20.0 || ^ v14.15.0 || >= v16.13.0
+- NodeJS >= v16.13.0
 
 ```sh
 npm install @hugoalh/github-sodium
@@ -39,7 +39,6 @@ npm install @hugoalh/github-sodium
 /* Either */
 import { ... } from "@hugoalh/github-sodium";// Named Import
 import * as githubSodium from "@hugoalh/github-sodium";// Namespace Import
-import githubSodium from "@hugoalh/github-sodium";// Default Import
 ```
 
 ### API

@@ -1,4 +1,4 @@
-import GitHubSodiumSealer from "./github-sodium-sealer.js";
+import { GitHubSodiumSealer } from "./github-sodium-sealer.js";
 /**
  * @function seal
  * @description Encrypt value to GitHub secret value.
@@ -9,4 +9,4 @@ import GitHubSodiumSealer from "./github-sodium-sealer.js";
 function seal(publicKey, value) {
     return new GitHubSodiumSealer(publicKey).encrypt(value);
 }
-export default seal;
+export { seal };

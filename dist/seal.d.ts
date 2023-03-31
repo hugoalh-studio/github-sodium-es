@@ -6,5 +6,5 @@
  * @returns {string} An encrypted GitHub secret value.
  */
 declare function seal(publicKey: string, value: string): string;
-export default seal;
+export { seal };
 //# sourceMappingURL=seal.d.ts.map
