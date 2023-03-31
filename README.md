@@ -46,28 +46,16 @@ import githubSodium from "@hugoalh/github-sodium";// Default Import
 
 #### Class
 
-<ul>
-<li>
-
-```ts
-new GitHubSodiumSealer(publicKey: string): GitHubSodiumSealer;
-  .encrypt(value: string): string;
-```
-
-</li>
-</ul>
+- ```ts
+  new GitHubSodiumSealer(publicKey: string): GitHubSodiumSealer;
+    .encrypt(value: string): string;
+  ```
 
 #### Function
 
-<ul>
-<li>
-
-```ts
-seal(publicKey: string, value: string): string;
-```
-
-</li>
-</ul>
+- ```ts
+  seal(publicKey: string, value: string): string;
+  ```
 
 ### Example
 
