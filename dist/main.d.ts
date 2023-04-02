@@ -33,9 +33,4 @@ declare class GitHubSodiumSealer {
  */
 declare function seal(publicKey: string, value: string): string;
 export { GitHubSodiumSealer, seal };
-declare const _default: {
-    GitHubSodiumSealer: typeof GitHubSodiumSealer;
-    seal: typeof seal;
-};
-export default _default;
 //# sourceMappingURL=main.d.ts.map

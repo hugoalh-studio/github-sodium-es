@@ -51,7 +51,3 @@ function seal(publicKey, value) {
     return new GitHubSodiumSealer(publicKey).encrypt(value);
 }
 export { GitHubSodiumSealer, seal };
-export default {
-    GitHubSodiumSealer,
-    seal
-};

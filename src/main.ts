@@ -54,7 +54,3 @@ export {
 	GitHubSodiumSealer,
 	seal
 };
-export default {
-	GitHubSodiumSealer,
-	seal
-};
