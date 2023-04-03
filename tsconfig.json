@@ -16,7 +16,6 @@
 		],
 		"module": "NodeNext",
 		"moduleResolution": "NodeNext",
-		"newLine": "crlf",
 		"outDir": "./dist",
 		"target": "ES2019"
 	},
