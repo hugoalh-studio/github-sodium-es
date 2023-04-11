@@ -1,8 +1,7 @@
 # GitHub Sodium (NodeJS)
 
-[`GitHubSodium.NodeJS`](https://github.com/hugoalh-studio/github-sodium-nodejs)
-
 ![License](https://img.shields.io/static/v1?label=License&message=MIT&style=flat-square "License")
+[![GitHub Repository](https://img.shields.io/badge/Repository-181717?logo=github&logoColor=ffffff&style=flat-square "GitHub Repository")](https://github.com/hugoalh-studio/github-sodium-nodejs)
 [![GitHub Stars](https://img.shields.io/github/stars/hugoalh-studio/github-sodium-nodejs?label=Stars&logo=github&logoColor=ffffff&style=flat-square "GitHub Stars")](https://github.com/hugoalh-studio/github-sodium-nodejs/stargazers)
 [![GitHub Contributors](https://img.shields.io/github/contributors/hugoalh-studio/github-sodium-nodejs?label=Contributors&logo=github&logoColor=ffffff&style=flat-square "GitHub Contributors")](https://github.com/hugoalh-studio/github-sodium-nodejs/graphs/contributors)
 [![GitHub Issues](https://img.shields.io/github/issues-raw/hugoalh-studio/github-sodium-nodejs?label=Issues&logo=github&logoColor=ffffff&style=flat-square "GitHub Issues")](https://github.com/hugoalh-studio/github-sodium-nodejs/issues)
@@ -23,7 +22,7 @@ This project is based on `libsodium.js` ([GitHub](https://github.com/jedisct1/li
 
 ## 📚 Documentation
 
-### Target
+### Getting Started
 
 - NodeJS ^ v12.20.0 || ^ v14.15.0 || >= v16.13.0
 
