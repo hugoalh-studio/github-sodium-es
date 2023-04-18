@@ -1,7 +1,6 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@hugoalh/advanced-determine': ^10.3.3
   '@types/libsodium-wrappers': ^0.7.10
   '@types/node': ^18.15.11
   '@typescript-eslint/eslint-plugin': ^5.59.0
@@ -12,7 +11,6 @@ specifiers:
   typescript: ^5.0.4
 
 dependencies:
-  '@hugoalh/advanced-determine': 10.3.3
   libsodium-wrappers: 0.7.11
 
 devDependencies:
@@ -62,18 +60,6 @@ packages:
     resolution: {integrity: sha512-IoD2MfUnOV58ghIHCiil01PcohxjbYR/qCxsoC+xNgUwh1EY8jOOrYmu3d3a71+tJJ23uscEV4X2HJWMsPJu4g==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
-
-  /@hugoalh/advanced-determine/10.3.3:
-    resolution: {integrity: sha512-+35mV+OySsSIRWvWWT8x1WE+l4NsQ6kGah81C8xUtku6UdBWQ0mk+wO+A6Yo37XlQn6e+hhboPL3gKFPO8iTPA==}
-    engines: {node: ^12.20.0 || ^14.15.0 || >=16.13.0}
-    dependencies:
-      '@hugoalh/undefinish': 1.0.21
-    dev: false
-
-  /@hugoalh/undefinish/1.0.21:
-    resolution: {integrity: sha512-AkNhRpMn1OGkl3k60CNmUp6MVVJpsfsEi0stJCfVEAr1DnhJx9oREDe9vK2BRrovchx6Xru93HI/2SgngJl5UQ==}
-    engines: {node: '>=6.9.0'}
-    dev: false
 
   /@humanwhocodes/config-array/0.11.8:
     resolution: {integrity: sha512-UybHIJzJnR5Qc/MsD9Kr+RpO2h+/P1GhOwdiLPXK5TWk5sgTdu88bTD9UP+CKbPPh5Rni1u0GjAdYQLemG8g+g==}
