@@ -24,7 +24,7 @@ This project is based on `libsodium.js` ([GitHub](https://github.com/jedisct1/li
 
 ### Getting Started
 
-- NodeJS ^ v12.20.0 || ^ v14.15.0 || >= v16.13.0
+- NodeJS ^ v12.20.0 \|\| ^ v14.15.0 \|\| >= v16.13.0
 
 ```sh
 npm install @hugoalh/github-sodium
