@@ -2,7 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@types/libsodium-wrappers': ^0.7.10
-  '@types/node': ^18.16.1
+  '@types/node': ^18.16.2
   '@typescript-eslint/eslint-plugin': ^5.59.1
   '@typescript-eslint/parser': ^5.59.1
   eslint: ^8.39.0
@@ -15,7 +15,7 @@ dependencies:
 
 devDependencies:
   '@types/libsodium-wrappers': 0.7.10
-  '@types/node': 18.16.1
+  '@types/node': 18.16.2
   '@typescript-eslint/eslint-plugin': 5.59.1_2utyh6gct5glvuz6qwradubqqa
   '@typescript-eslint/parser': 5.59.1_iacogk7kkaymxepzhgcbytyi7q
   eslint: 8.39.0
@@ -110,8 +110,8 @@ packages:
     resolution: {integrity: sha512-BqI9B92u+cM3ccp8mpHf+HzJ8fBlRwdmyd6+fz3p99m3V6ifT5O3zmOMi612PGkpeFeG/G6loxUnzlDNhfjPSA==}
     dev: true
 
-  /@types/node/18.16.1:
-    resolution: {integrity: sha512-DZxSZWXxFfOlx7k7Rv4LAyiMroaxa3Ly/7OOzZO8cBNho0YzAi4qlbrx8W27JGqG57IgR/6J7r+nOJWw6kcvZA==}
+  /@types/node/18.16.2:
+    resolution: {integrity: sha512-GQW/JL/5Fz/0I8RpeBG9lKp0+aNcXEaVL71c0D2Q0QHDTFvlYKT7an0onCUXj85anv7b4/WesqdfchLc0jtsCg==}
     dev: true
 
   /@types/semver/7.3.13:
