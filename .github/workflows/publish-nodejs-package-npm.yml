@@ -7,8 +7,8 @@ defaults:
   run:
     shell: "pwsh"
 jobs:
-  publish-nodejs-package-npm:
-    name: "Publish NodeJS Package - NPM (Reusable Workflow)"
+  main:
+    name: "Main"
     uses: "hugoalh/hugoalh/.github/workflows/publish-nodejs-package-npm.yml@main"
     secrets:
       NPM_TOKEN: "${{secrets.NPM_TOKEN}}"
