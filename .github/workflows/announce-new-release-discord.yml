@@ -10,7 +10,7 @@ jobs:
     with:
       name: "GitHub Sodium (NodeJS)"
       color: "#339933"
-      thumbnail: "https://i.imgur.com/t0myXUU.png"
+      thumbnail: "https://i.imgur.com/fxO50cJ.png"
       releases: |
         **- GitHub (& Changelog):** ${{github.event.release.html_url}}
         **- NPM:** https://www.npmjs.com/package/@hugoalh/github-sodium
