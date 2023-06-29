@@ -32,7 +32,7 @@
 		"@typescript-eslint/parser": "^5.60.1",
 		"eslint": "^8.43.0",
 		"eslint-plugin-only-warn": "^1.1.0",
-		"typescript": "^5.1.5"
+		"typescript": "^5.1.6"
 	},
 	"engines": {
 		"node": "^12.20.0 || ^14.15.0 || >=16.13.0"
