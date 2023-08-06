@@ -45,7 +45,7 @@ import githubSodium from "@hugoalh/github-sodium";// Default Import
 
 ### Example
 
-```js
-new GitHubSodiumSealer("base64-encoded-public-key").encrypt("plain-text-secret");
-//=> "+ZYvJDZMHUfBkJdyq5Zm9SKqeuBQ4sj+6sfjlH4CgG0="
-```
+- ```js
+  new GitHubSodiumSealer("base64-encoded-public-key").encrypt("plain-text-secret");
+  //=> "+ZYvJDZMHUfBkJdyq5Zm9SKqeuBQ4sj+6sfjlH4CgG0="
+  ```
