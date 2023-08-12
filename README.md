@@ -25,22 +25,20 @@ npm install @hugoalh/github-sodium
 /* Either */
 import { ... } from "@hugoalh/github-sodium";// Named Import
 import * as githubSodium from "@hugoalh/github-sodium";// Namespace Import
-import githubSodium from "@hugoalh/github-sodium";// Default Import
+import GitHubSodiumSealer from "@hugoalh/github-sodium";// Default Import (Class `GitHubSodiumSealer`)
 ```
 
 ### API
 
-#### Class
-
 - ```ts
-  new GitHubSodiumSealer(publicKey: string): GitHubSodiumSealer;
-    .encrypt(value: string): string;
+  class GitHubSodiumSealer {
+    constructor(publicKey: string): GitHubSodiumSealer;
+    encrypt(value: string): string;
+    static seal(publicKey: string, value: string): string;
+  }
   ```
-
-#### Function
-
 - ```ts
-  seal(publicKey: string, value: string): string;
+  function seal(publicKey: string, value: string): string;
   ```
 
 ### Example
