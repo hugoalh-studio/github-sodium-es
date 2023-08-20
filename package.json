@@ -37,5 +37,8 @@
 	"engines": {
 		"node": "^12.20.0 || ^14.15.0 || >=16.13.0"
 	},
-	"private": false
+	"private": false,
+	"publishConfig": {
+		"access": "public"
+	}
 }
