@@ -1,6 +1,7 @@
 # GitHub Sodium (NodeJS)
 
 [⚖️ MIT](./LICENSE.md)
+[![CodeFactor Grade](https://img.shields.io/codefactor/grade/github/hugoalh-studio/github-sodium-nodejs?label=Grade&logo=codefactor&logoColor=ffffff&style=flat-square "CodeFactor Grade")](https://www.codefactor.io/repository/github/hugoalh-studio/github-sodium-nodejs)
 
 |  | **Heat** | **Release - Latest** | **Release - Pre** |
 |:-:|:-:|:-:|:-:|
