@@ -10,7 +10,7 @@ export class GitHubSodiumSealer {
 	 */
 	constructor(publicKey: string) {
 		if (!(typeof publicKey === "string" && publicKey.length > 0)) {
-			throw new TypeError(`Argument \`publicKey\` must be type of string (non-empty)!`);
+			throw new TypeError(`Argument \`publicKey\` is not a string (non-empty)!`);
 		}
 		this.#publicKeyBuffer = Buffer.from(publicKey, "base64");
 	}
@@ -21,7 +21,7 @@ export class GitHubSodiumSealer {
 	 */
 	encrypt(value: string): string {
 		if (!(typeof value === "string" && value.length > 0)) {
-			throw new TypeError(`Argument \`value\` must be type of string (non-empty)!`);
+			throw new TypeError(`Argument \`value\` is not a string (non-empty)!`);
 		}
 		return Buffer.from(libsodium.crypto_box_seal(Buffer.from(value), this.#publicKeyBuffer)).toString("base64");
 	}
