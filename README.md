@@ -12,24 +12,43 @@ A NodeJS module to provide an easier sodium for GitHub secrets.
 
 This project is based on `libsodium.js` ([GitHub](https://github.com/jedisct1/libsodium.js))([NPM](https://www.npmjs.com/package/libsodium)) with optimization for GitHub secrets.
 
-## 📓 Documentation
+## 🔰 Begin
 
-### Getting Started
+### Bun
 
-- NodeJS ^ v12.20.0 \|\| ^ v14.15.0 \|\| >= v16.13.0
+> **🧪 Experimental:** Bun is still under development.
 
-```sh
-npm install @hugoalh/github-sodium
-```
+- **Target Version:** ^ v1.0.0, &:
+  - TypeScript >= v5.1.0 *\[Development\]*
+- **Require Permission:** *N/A*
+- **Domain/Registry:**
+  - [NPM](https://www.npmjs.com/package/@hugoalh/github-sodium)
+    ```sh
+    bun add @hugoalh/github-sodium
+    ```
+    ```js
+    import ... from "@hugoalh/github-sodium[@<Tag>]";
+    ```
 
-```js
-/* Either */
-import { ... } from "@hugoalh/github-sodium";// Named Import
-import * as githubSodium from "@hugoalh/github-sodium";// Namespace Import
-import GitHubSodiumSealer from "@hugoalh/github-sodium";// Default Import (Class `GitHubSodiumSealer`)
-```
+> **ℹ️ Notice:** It is also able to import part of the module with sub path if available, see [file `package.json`](./package.json) property `exports` for available sub paths.
 
-### API
+### NodeJS
+
+- **Target Version:** ^ v12.20.0 \|\| ^ v14.15.0 \|\| >= v16.13.0, &:
+  - TypeScript >= v5.1.0 *\[Development\]*
+- **Require Permission:** *N/A*
+- **Domain/Registry:**
+  - [NPM](https://www.npmjs.com/package/@hugoalh/github-sodium)
+    ```sh
+    npm install @hugoalh/github-sodium
+    ```
+    ```js
+    import ... from "@hugoalh/github-sodium";
+    ```
+
+> **ℹ️ Notice:** It is also able to import part of the module with sub path if available, see [file `package.json`](./package.json) property `exports` for available sub paths.
+
+## 🧩 API
 
 - ```ts
   class GitHubSodiumSealer {
@@ -42,9 +61,13 @@ import GitHubSodiumSealer from "@hugoalh/github-sodium";// Default Import (Class
   function seal(publicKey: string, value: string): string;
   ```
 
-### Example
+> **ℹ️ Notice:** Documentation is included inside the script file.
+
+## ✍️ Example
 
 - ```js
+  import { GitHubSodiumSealer } from "@hugoalh/github-sodium";
+
   new GitHubSodiumSealer("base64-encoded-public-key").encrypt("plain-text-secret");
   //=> "+ZYvJDZMHUfBkJdyq5Zm9SKqeuBQ4sj+6sfjlH4CgG0="
   ```
