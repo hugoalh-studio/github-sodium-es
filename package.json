@@ -1,6 +1,6 @@
 {
 	"name": "@hugoalh/github-sodium",
-	"version": "3.1.2",
+	"version": "3.1.3",
 	"description": "A module to provide an easier sodium for GitHub secrets.",
 	"keywords": [
 		"github",
@@ -23,13 +23,13 @@
 		"url": "git+https://github.com/hugoalh-studio/github-sodium-nodejs.git"
 	},
 	"dependencies": {
-		"libsodium-wrappers": "^0.7.11"
+		"libsodium-wrappers": "^0.7.13"
 	},
 	"devDependencies": {
 		"@types/libsodium-wrappers": "^0.7.11",
 		"@types/node": "^20.6.0",
-		"@typescript-eslint/eslint-plugin": "^6.6.0",
-		"@typescript-eslint/parser": "^6.6.0",
+		"@typescript-eslint/eslint-plugin": "^6.7.0",
+		"@typescript-eslint/parser": "^6.7.0",
 		"eslint": "^8.49.0",
 		"eslint-plugin-only-warn": "^1.1.0",
 		"typescript": "^5.2.2"

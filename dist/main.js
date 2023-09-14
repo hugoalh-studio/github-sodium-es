@@ -13,7 +13,7 @@ var _GitHubSodiumSealer_publicKeyBuffer;
 import libsodium from "libsodium-wrappers";
 await libsodium.ready;
 /**
- * Encrypt value to GitHub secret value.
+ * GitHub sodium sealer to encrypt value to GitHub secret value.
  */
 export class GitHubSodiumSealer {
     /**
@@ -21,7 +21,7 @@ export class GitHubSodiumSealer {
      */
     constructor(publicKey) {
         _GitHubSodiumSealer_publicKeyBuffer.set(this, void 0);
-        if (!(typeof publicKey === "string" && publicKey.length > 0)) {
+        if (!(publicKey.length > 0)) {
             throw new TypeError(`Argument \`publicKey\` is not a string (non-empty)!`);
         }
         __classPrivateFieldSet(this, _GitHubSodiumSealer_publicKeyBuffer, Buffer.from(publicKey, "base64"), "f");
@@ -32,7 +32,7 @@ export class GitHubSodiumSealer {
      * @returns {string} An encrypted GitHub secret value.
      */
     encrypt(value) {
-        if (!(typeof value === "string" && value.length > 0)) {
+        if (!(value.length > 0)) {
             throw new TypeError(`Argument \`value\` is not a string (non-empty)!`);
         }
         return Buffer.from(libsodium.crypto_box_seal(Buffer.from(value), __classPrivateFieldGet(this, _GitHubSodiumSealer_publicKeyBuffer, "f"))).toString("base64");
