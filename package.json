@@ -23,7 +23,7 @@
 		"url": "git+https://github.com/hugoalh-studio/github-sodium-nodejs.git"
 	},
 	"dependencies": {
-		"libsodium-wrappers": "^0.7.11"
+		"libsodium-wrappers": "^0.7.13"
 	},
 	"devDependencies": {
 		"@types/libsodium-wrappers": "^0.7.11",
