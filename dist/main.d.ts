@@ -1,5 +1,5 @@
 /**
- * GitHub sodium sealer to encrypt value to GitHub secret value.
+ * GitHub sodium sealer for encrypt value to GitHub secret value.
  */
 export declare class GitHubSodiumSealer {
     #private;

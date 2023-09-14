@@ -13,7 +13,7 @@ var _GitHubSodiumSealer_publicKeyBuffer;
 import libsodium from "libsodium-wrappers";
 await libsodium.ready;
 /**
- * GitHub sodium sealer to encrypt value to GitHub secret value.
+ * GitHub sodium sealer for encrypt value to GitHub secret value.
  */
 export class GitHubSodiumSealer {
     /**
