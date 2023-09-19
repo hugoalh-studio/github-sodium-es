@@ -24,7 +24,7 @@ This project is based on `libsodium.js` ([GitHub](https://github.com/jedisct1/li
 - **Domain/Registry:**
   - [NPM](https://www.npmjs.com/package/@hugoalh/github-sodium)
     ```sh
-    bun add @hugoalh/github-sodium
+    bun add @hugoalh/github-sodium[@<Tag>]
     ```
     ```js
     import ... from "@hugoalh/github-sodium[@<Tag>]";
@@ -40,7 +40,7 @@ This project is based on `libsodium.js` ([GitHub](https://github.com/jedisct1/li
 - **Domain/Registry:**
   - [NPM](https://www.npmjs.com/package/@hugoalh/github-sodium)
     ```sh
-    npm install @hugoalh/github-sodium
+    npm install @hugoalh/github-sodium[@<Tag>]
     ```
     ```js
     import ... from "@hugoalh/github-sodium";
