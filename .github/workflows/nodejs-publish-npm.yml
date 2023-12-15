@@ -1,15 +1,15 @@
 # yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
-name: "Publish NodeJS Package - NPM"
+name: "NodeJS - Publish - NPM"
 on:
   release:
     types:
       - "published"
-defaults:
-  run:
-    shell: "pwsh"
+permissions:
+  contents: "read"
+  id-token: "write"
 jobs:
   main:
     name: "Main"
-    uses: "hugoalh/hugoalh/.github/workflows/reusable-publish-nodejs-package-npm.yml@main"
+    uses: "hugoalh/hugoalh/.github/workflows/call-nodejs-publish-npm-0.yml@main"
     secrets:
       NPM_TOKEN: "${{secrets.NPM_TOKEN}}"
