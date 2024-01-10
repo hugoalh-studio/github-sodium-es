@@ -1,30 +1,18 @@
-var __classPrivateFieldSet = (this && this.__classPrivateFieldSet) || function (receiver, state, value, kind, f) {
-    if (kind === "m") throw new TypeError("Private method is not writable");
-    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a setter");
-    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
-    return (kind === "a" ? f.call(receiver, value) : f ? f.value = value : state.set(receiver, value)), value;
-};
-var __classPrivateFieldGet = (this && this.__classPrivateFieldGet) || function (receiver, state, kind, f) {
-    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a getter");
-    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
-    return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
-};
-var _GitHubSodiumSealer_publicKeyBuffer;
 import libsodium from "libsodium-wrappers";
 await libsodium.ready;
 /**
  * GitHub sodium sealer for encrypt value to GitHub secret value.
  */
 export class GitHubSodiumSealer {
+    #publicKeyBuffer;
     /**
      * @param {string} publicKey Organization's or repository's public key, which need for encrypt value to secret value before create or update a secret.
      */
     constructor(publicKey) {
-        _GitHubSodiumSealer_publicKeyBuffer.set(this, void 0);
         if (!(publicKey.length > 0)) {
             throw new SyntaxError(`Argument \`publicKey\` is not a string which is non-empty!`);
         }
-        __classPrivateFieldSet(this, _GitHubSodiumSealer_publicKeyBuffer, Buffer.from(publicKey, "base64"), "f");
+        this.#publicKeyBuffer = Buffer.from(publicKey, "base64");
     }
     /**
      * Encrypt value to GitHub secret value.
@@ -35,7 +23,7 @@ export class GitHubSodiumSealer {
         if (!(value.length > 0)) {
             throw new SyntaxError(`Argument \`value\` is not a string which is non-empty!`);
         }
-        return Buffer.from(libsodium.crypto_box_seal(Buffer.from(value), __classPrivateFieldGet(this, _GitHubSodiumSealer_publicKeyBuffer, "f"))).toString("base64");
+        return Buffer.from(libsodium.crypto_box_seal(Buffer.from(value), this.#publicKeyBuffer)).toString("base64");
     }
     /**
      * Encrypt value to GitHub secret value.
@@ -47,7 +35,6 @@ export class GitHubSodiumSealer {
         return new this(publicKey).encrypt(value);
     }
 }
-_GitHubSodiumSealer_publicKeyBuffer = new WeakMap();
 export default GitHubSodiumSealer;
 /**
  * Encrypt value to GitHub secret value.
