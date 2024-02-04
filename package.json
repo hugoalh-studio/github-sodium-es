@@ -23,6 +23,9 @@
 		"type": "git",
 		"url": "git+https://github.com/hugoalh-studio/github-sodium-nodejs.git"
 	},
+	"scripts": {
+		"build": "tsc"
+	},
 	"dependencies": {
 		"libsodium-wrappers": "^0.7.13"
 	},
