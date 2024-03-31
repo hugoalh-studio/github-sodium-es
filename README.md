@@ -1,33 +1,71 @@
-# GitHub Sodium (NodeJS)
+# GitHub Sodium (JavaScript)
 
-[⚖️ MIT](./LICENSE.md)
+[**⚖️** MIT](./LICENSE.md)
 
-|  | **Release - Latest** | **Release - Pre** |
-|:-:|:-:|:-:|
-| [![GitHub](https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=ffffff&style=flat-square "GitHub")](https://github.com/hugoalh-studio/github-sodium-nodejs) | ![GitHub Latest Release Version](https://img.shields.io/github/release/hugoalh-studio/github-sodium-nodejs?sort=semver&label=&style=flat-square "GitHub Latest Release Version") (![GitHub Latest Release Date](https://img.shields.io/github/release-date/hugoalh-studio/github-sodium-nodejs?label=&style=flat-square "GitHub Latest Release Date")) | ![GitHub Latest Pre-Release Version](https://img.shields.io/github/release/hugoalh-studio/github-sodium-nodejs?include_prereleases&sort=semver&label=&style=flat-square "GitHub Latest Pre-Release Version") (![GitHub Latest Pre-Release Date](https://img.shields.io/github/release-date-pre/hugoalh-studio/github-sodium-nodejs?label=&style=flat-square "GitHub Latest Pre-Release Date")) |
-| [![NPM](https://img.shields.io/badge/NPM-CB3837?logo=npm&logoColor=ffffff&style=flat-square "NPM")](https://www.npmjs.com/package/@hugoalh/github-sodium) | ![NPM Latest Release Version](https://img.shields.io/npm/v/@hugoalh/github-sodium/latest?label=&style=flat-square "NPM Latest Release Version") | ![NPM Latest Pre-Release Version](https://img.shields.io/npm/v/@hugoalh/github-sodium/pre?label=&style=flat-square "NPM Latest Pre-Release Version") |
+**🗂️**
+[![GitHub: hugoalh-studio/github-sodium-js](https://img.shields.io/badge/hugoalh--studio/github--sodium--js-181717?logo=github&logoColor=ffffff&style=flat "GitHub: hugoalh-studio/github-sodium-js")](https://github.com/hugoalh-studio/github-sodium-js)
+[![NPM: @hugoalh/github-sodium](https://img.shields.io/badge/@hugoalh/github--sodium-CB3837?logo=npm&logoColor=ffffff&style=flat "NPM: @hugoalh/github-sodium")](https://www.npmjs.com/package/@hugoalh/github-sodium)
 
-A NodeJS module to provide an easier sodium for GitHub secrets.
+**🆙** ![Latest Release Version](https://img.shields.io/github/release/hugoalh-studio/github-sodium-js?sort=semver&color=2187C0&label=&style=flat "Latest Release Version") (![Latest Release Date](https://img.shields.io/github/release-date/hugoalh-studio/github-sodium-js?color=2187C0&label=&style=flat "Latest Release Date"))
 
-This project is based on libsodium.js ([GitHub](https://github.com/jedisct1/libsodium.js))([NPM](https://www.npmjs.com/package/libsodium)) with optimization for GitHub secrets.
+A JavaScript module to provide an easier sodium for GitHub secrets.
 
-## 🔰 Begin
+This project is based on [libsodium.js](https://github.com/jedisct1/libsodium.js) with optimization for GitHub secrets.
 
-### NodeJS
+## 🎯 Target
 
-- **Target Version:** >= v16.13.0, &:
-  - TypeScript >= v5.1.0 *\[Development\]*
-- **Require Permission:** *N/A*
-- **Registry:**
-  - [NPM](https://www.npmjs.com/package/@hugoalh/github-sodium)
-    ```sh
-    npm install @hugoalh/github-sodium[@<Tag>]
-    ```
+- Bun ^ v1.0.0
+- Cloudflare Workers
+- Deno >= v1.34.0
+  > **🛡️ Require Permission**
+  >
+  > *N/A*
+- NodeJS >= v16.13.0
+
+## 🔰 Usage
+
+### Via Installation
+
+> **🎯 Supported Target**
+>
+> - Cloudflare Workers
+> - NodeJS
+
+1. Install via console/shell/terminal:
+    - Via NPM
+      ```sh
+      npm install @hugoalh/github-sodium[@<Tag>]
+      ```
+    - Via PNPM
+      ```sh
+      pnpm add @hugoalh/github-sodium[@<Tag>]
+      ```
+    - Via Yarn
+      ```sh
+      yarn add @hugoalh/github-sodium[@<Tag>]
+      ```
+2. Import at the script (`<ScriptName>.js`):
     ```js
     import ... from "@hugoalh/github-sodium";
     ```
+    > **ℹ️ Note**
+    >
+    > Although it is recommended to import the entire module, it is also able to import part of the module with sub path if available, please visit [file `package.json`](./package.json) property `exports` for available sub paths.
 
-> **ℹ️ Notice:** It is also able to import part of the module with sub path if available, see [file `package.json`](./package.json) property `exports` for available sub paths.
+### Via NPM Specifier
+
+> **🎯 Supported Target**
+>
+> - Bun
+> - Deno
+
+1. Import at the script (`<ScriptName>.js`):
+    ```js
+    import ... from "npm:@hugoalh/github-sodium[@<Tag>]";
+    ```
+    > **ℹ️ Note**
+    >
+    > Although it is recommended to import the entire module, it is also able to import part of the module with sub path if available, please visit [file `package.json`](./package.json) property `exports` for available sub paths.
 
 ## 🧩 API
 
@@ -42,13 +80,9 @@ This project is based on libsodium.js ([GitHub](https://github.com/jedisct1/libs
   function seal(publicKey: string, value: string): string;
   ```
 
-> **ℹ️ Notice:** Documentation is included inside the script file.
-
 ## ✍️ Example
 
 - ```js
-  import { GitHubSodiumSealer } from "@hugoalh/github-sodium";
-
   new GitHubSodiumSealer("base64-encoded-public-key").encrypt("plain-text-secret");
   //=> "+ZYvJDZMHUfBkJdyq5Zm9SKqeuBQ4sj+6sfjlH4CgG0="
   ```

@@ -1,8 +1,0 @@
-*
-!asset/**
-!bin/**
-!dist/**
-!lib/**
-!LICENSE.md
-!package.json
-!README.md

@@ -1,13 +1,14 @@
 # yaml-language-server: $schema=https://citation-file-format.github.io/1.2.0/schema.json
 cff-version: "1.2.0"
-title: "GitHub Sodium (NodeJS)"
+title: "GitHub Sodium (JavaScript)"
 message: "If you use this software, please cite it using the metadata from this file."
 type: "software"
 authors:
   - name: "hugoalh Studio"
-repository-code: "https://github.com/hugoalh-studio/github-sodium-nodejs"
+repository-code: "https://github.com/hugoalh-studio/github-sodium-js"
 keywords:
   - "github"
-  - "nodejs"
+  - "javascript"
+  - "js"
   - "sodium"
 license: "MIT"
