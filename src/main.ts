@@ -6,6 +6,7 @@ await libsodium.ready;
 export class GitHubSodiumSealer {
 	#publicKeyBuffer: Buffer;
 	/**
+	 * Initialize GitHub sodium sealer.
 	 * @param {string} publicKey Organization's or repository's public key, which need for encrypt value to secret value before create or update a secret.
 	 */
 	constructor(publicKey: string) {
