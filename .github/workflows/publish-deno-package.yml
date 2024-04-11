@@ -1,5 +1,5 @@
 # yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
-name: "Publish NodeJS Package"
+name: "Publish Deno Package"
 on:
   release:
     types:
@@ -10,6 +10,9 @@ jobs:
     permissions:
       contents: "write"
       id-token: "write"
-    uses: "hugoalh/hugoalh/.github/workflows/call-publish-nodejs-package-0.yml@main"
+    uses: "hugoalh/hugoalh/.github/workflows/call-publish-deno-package-0.yml@main"
+    with:
+      deployment_jsr: true
+      deployment_npm: true
     secrets:
       NPM_TOKEN: "${{secrets.NPM_TOKEN}}"

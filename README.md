@@ -1,22 +1,20 @@
-# GitHub Sodium (JavaScript)
+# GitHub Sodium (ES)
 
 [**⚖️** MIT](./LICENSE.md)
 
-**🗂️**
-[![GitHub: hugoalh-studio/github-sodium-js](https://img.shields.io/badge/hugoalh--studio/github--sodium--js-181717?logo=github&logoColor=ffffff&style=flat "GitHub: hugoalh-studio/github-sodium-js")](https://github.com/hugoalh-studio/github-sodium-js)
-[![NPM: @hugoalh/github-sodium](https://img.shields.io/badge/@hugoalh/github--sodium-CB3837?logo=npm&logoColor=ffffff&style=flat "NPM: @hugoalh/github-sodium")](https://www.npmjs.com/package/@hugoalh/github-sodium)
+[![GitHub: hugoalh-studio/github-sodium-es](https://img.shields.io/github/v/release/hugoalh-studio/github-sodium-es?label=hugoalh-studio/github-sodium-es&labelColor=181717&logo=github&logoColor=ffffff&sort=semver&style=flat "GitHub: hugoalh-studio/github-sodium-es")](https://github.com/hugoalh-studio/github-sodium-es)
+[![JSR: @hugoalh/github-sodium](https://img.shields.io/jsr/v/@hugoalh/github-sodium?label=JSR%20@hugoalh/github-sodium&labelColor=F7DF1E&logoColor=000000&style=flat "JSR: @hugoalh/github-sodium")](https://jsr.io/@hugoalh/github-sodium)
+[![NPM: @hugoalh/github-sodium](https://img.shields.io/npm/v/@hugoalh/github-sodium?label=@hugoalh/github-sodium&labelColor=CB3837&logo=npm&logoColor=ffffff&style=flat "NPM: @hugoalh/github-sodium")](https://www.npmjs.com/package/@hugoalh/github-sodium)
 
-**🆙** ![Latest Release Version](https://img.shields.io/github/release/hugoalh-studio/github-sodium-js?sort=semver&color=2187C0&label=&style=flat "Latest Release Version") (![Latest Release Date](https://img.shields.io/github/release-date/hugoalh-studio/github-sodium-js?color=2187C0&label=&style=flat "Latest Release Date"))
+An ES (JavaScript & TypeScript) module to provide an easier sodium for GitHub secrets.
 
-A JavaScript module to provide an easier sodium for GitHub secrets.
-
-This project is based on [libsodium.js](https://github.com/jedisct1/libsodium.js) with optimization for GitHub secrets.
+This project is based on "[libsodium.js](https://github.com/jedisct1/libsodium.js)" with optimization for GitHub secrets.
 
 ## 🎯 Target
 
 - Bun ^ v1.0.0
 - Cloudflare Workers
-- Deno >= v1.34.0
+- Deno >= v1.34.0 / >= v1.41.1 (For JSR Only)
   > **🛡️ Require Permission**
   >
   > *N/A*
@@ -24,48 +22,126 @@ This project is based on [libsodium.js](https://github.com/jedisct1/libsodium.js
 
 ## 🔰 Usage
 
-### Via Installation
+### Via JSR With `node_modules`
+
+> **🎯 Supported Target**
+>
+> - Bun
+> - Cloudflare Workers
+> - NodeJS
+
+1. Install via:
+    - Bun
+      ```sh
+      bunx jsr add @hugoalh/github-sodium[@${Tag}]
+      ```
+    - NPM
+      ```sh
+      npx jsr add @hugoalh/github-sodium[@${Tag}]
+      ```
+    - PNPM
+      ```sh
+      pnpm dlx jsr add @hugoalh/github-sodium[@${Tag}]
+      ```
+    - Yarn
+      ```sh
+      yarn dlx jsr add @hugoalh/github-sodium[@${Tag}]
+      ```
+2. Import at the script:
+    ```ts
+    import ... from "@hugoalh/github-sodium";
+    ```
+
+> **ℹ️ Note**
+>
+> - Although it is recommended to import the entire module, it is also able to import part of the module with sub path if available, please visit [file `jsr.jsonc`](./jsr.jsonc) property `exports` for available sub paths.
+> - It is recommended to import the module with tag for immutability.
+
+### Via JSR With Specifier
+
+> **🎯 Supported Target**
+>
+> - Deno
+
+1. Import at the script:
+    ```ts
+    import ... from "jsr:@hugoalh/github-sodium[@${Tag}]";
+    ```
+
+> **ℹ️ Note**
+>
+> - Although it is recommended to import the entire module, it is also able to import part of the module with sub path if available, please visit [file `jsr.jsonc`](./jsr.jsonc) property `exports` for available sub paths.
+> - It is recommended to import the module with tag for immutability.
+
+### Via NPM With `node_modules`
 
 > **🎯 Supported Target**
 >
 > - Cloudflare Workers
 > - NodeJS
 
-1. Install via console/shell/terminal:
-    - Via NPM
+1. Install via:
+    - NPM
       ```sh
-      npm install @hugoalh/github-sodium[@<Tag>]
+      npm install @hugoalh/github-sodium[@${Tag}]
       ```
-    - Via PNPM
+    - PNPM
       ```sh
-      pnpm add @hugoalh/github-sodium[@<Tag>]
+      pnpm add @hugoalh/github-sodium[@${Tag}]
       ```
-    - Via Yarn
+    - Yarn
       ```sh
-      yarn add @hugoalh/github-sodium[@<Tag>]
+      yarn add @hugoalh/github-sodium[@${Tag}]
       ```
-2. Import at the script (`<ScriptName>.js`):
-    ```js
+2. Import at the script:
+    ```ts
     import ... from "@hugoalh/github-sodium";
     ```
-    > **ℹ️ Note**
-    >
-    > Although it is recommended to import the entire module, it is also able to import part of the module with sub path if available, please visit [file `package.json`](./package.json) property `exports` for available sub paths.
 
-### Via NPM Specifier
+> **ℹ️ Note**
+>
+> - Although it is recommended to import the entire module, it is also able to import part of the module with sub path if available, please visit [file `jsr.jsonc`](./jsr.jsonc) property `exports` for available sub paths.
+> - It is recommended to import the module with tag for immutability.
+
+### Via NPM With Specifier
 
 > **🎯 Supported Target**
 >
 > - Bun
 > - Deno
 
-1. Import at the script (`<ScriptName>.js`):
-    ```js
-    import ... from "npm:@hugoalh/github-sodium[@<Tag>]";
+1. Import at the script:
+    ```ts
+    import ... from "npm:@hugoalh/github-sodium[@${Tag}]";
     ```
-    > **ℹ️ Note**
-    >
-    > Although it is recommended to import the entire module, it is also able to import part of the module with sub path if available, please visit [file `package.json`](./package.json) property `exports` for available sub paths.
+
+> **ℹ️ Note**
+>
+> - Although it is recommended to import the entire module, it is also able to import part of the module with sub path if available, please visit [file `jsr.jsonc`](./jsr.jsonc) property `exports` for available sub paths.
+> - It is recommended to import the module with tag for immutability.
+
+### Via Remote Import
+
+> **🎯 Supported Target**
+>
+> - Deno
+
+1. Import at the script:
+    ```ts
+    /* Via GitHub Raw (Require Tag) */
+    import ... from "https://raw.githubusercontent.com/hugoalh-studio/github-sodium-es/${Tag}/mod.ts";
+    ```
+
+> **ℹ️ Note**
+>
+> - Although it is recommended to import the entire module with the main path `mod.ts`, it is also able to import part of the module with sub path if available, but do not import if:
+>
+>   - it's file path has an underscore prefix (e.g.: `_foo.ts`, `_util/bar.ts`), or
+>   - it is a benchmark or test file (e.g.: `foo.bench.ts`, `foo.test.ts`), or
+>   - it's symbol has an underscore prefix (e.g.: `export function _baz() {}`).
+>
+>   These elements are not considered part of the public API, thus no stability is guaranteed for them.
+> - Although there have 3rd party services which provide enhanced, equal, or similar methods/ways to remote import the module, beware these services maybe inject unrelated elements and thus affect the security.
 
 ## 🧩 API
 
@@ -82,7 +158,6 @@ This project is based on [libsodium.js](https://github.com/jedisct1/libsodium.js
 
 ## ✍️ Example
 
-- ```js
-  new GitHubSodiumSealer("base64-encoded-public-key").encrypt("plain-text-secret");
-  //=> "+ZYvJDZMHUfBkJdyq5Zm9SKqeuBQ4sj+6sfjlH4CgG0="
+- ```ts
+  new GitHubSodiumSealer("2Sg8iYjAxxmI2LvUXpJjkYrMxURPc8r+dB7TJyvv1234").encrypt("plain-text-secret");
   ```

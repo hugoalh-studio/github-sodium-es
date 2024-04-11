@@ -1,0 +1,45 @@
+{
+	"$schema": "https://deno.land/x/deno/cli/schemas/config-file.v1.json",
+	"fmt": {
+		"indentWidth": 4,
+		"lineWidth": 800,
+		"proseWrap": "preserve",
+		"semiColons": true,
+		"singleQuote": false,
+		"useTabs": true
+	},
+	"imports": {
+		// Only remap development dependencies! For more information, please visit https://docs.deno.com/runtime/manual/basics/import_maps.
+		"DNT": "jsr:@deno/dnt@0.41.1",
+		"STD/": "https://deno.land/std@0.221.0/",
+		"TEST/": "https://deno.land/std@0.221.0/assert/"
+	},
+	"lint": {
+		"rules": {
+			"tags": [
+				"recommended"
+			],
+			"include": [
+				"default-param-last",
+				"eqeqeq",
+				"guard-for-in",
+				"no-const-assign",
+				"no-eval",
+				"no-non-null-asserted-optional-chain",
+				"no-self-compare",
+				"no-sparse-arrays",
+				"no-sync-fn-in-async-fn",
+				"no-undef",
+				"triple-slash-reference",
+				"verbatim-module-syntax"
+			]
+		}
+	},
+	"lock": false,
+	"tasks": {
+		// Check JSR package metadata. `deno publish` have weird behaviours, always check before release! For more information, please visit https://github.com/denoland/deno/issues/22648.
+		"jsr-check": "deno publish --allow-dirty --config jsr.jsonc --dry-run --no-provenance",
+		// Build NPM package.
+		"npm-build": "deno run --allow-all --deny-hrtime --no-prompt --quiet .dnt.ts"
+	}
+}

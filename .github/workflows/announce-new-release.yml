@@ -15,7 +15,7 @@ jobs:
         with:
           key: "${{secrets.DISCORD_HXHS_PROJECTNEWRELEASEANNOUNCER_WEBHOOK}}"
           embeds: |
-            - title: "GitHub Sodium (JavaScript)"
+            - title: "GitHub Sodium (ES)"
               description: |
                 > ${{github.event.repository.description}}
 
@@ -32,6 +32,9 @@ jobs:
                   inline: false
                 - name: "GitHub"
                   value: "${{github.event.repository.html_url}}"
+                  inline: false
+                - name: "JSR"
+                  value: "https://jsr.io/@hugoalh/github-sodium"
                   inline: false
                 - name: "NPM"
                   value: "https://www.npmjs.com/package/@hugoalh/github-sodium"
