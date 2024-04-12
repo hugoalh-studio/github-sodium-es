@@ -11,8 +11,7 @@
 	"imports": {
 		// Only remap development dependencies! For more information, please visit https://docs.deno.com/runtime/manual/basics/import_maps.
 		"DNT": "jsr:@deno/dnt@0.41.1",
-		"STD/": "https://deno.land/std@0.221.0/",
-		"TEST/": "https://deno.land/std@0.221.0/assert/"
+		"STD/": "https://deno.land/std@0.222.1/"
 	},
 	"lint": {
 		"rules": {
