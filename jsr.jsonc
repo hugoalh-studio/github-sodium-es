@@ -5,7 +5,9 @@
 	"exports": {
 		".": "./mod.ts"
 	},
-	"imports": { },
+	"imports": {
+		"https://esm.sh/libsodium-wrappers@0.7.13": "npm:libsodium-wrappers@0.7.13"
+	},
 	"publish": {
 		"exclude": [
 			"**/*_bench.ts",

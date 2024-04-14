@@ -9,7 +9,7 @@ const transformResult: TransformOutput = await transform({
 	entryPoints: ["mod.ts"],
 	mappings: {
 		"node:buffer": { name: "node:buffer" },
-		"npm:libsodium-wrappers@0.7.13": { name: "libsodium-wrappers" },
+		"https://esm.sh/libsodium-wrappers@0.7.13": { name: "libsodium-wrappers" }
 	},
 	shims: [],
 	target: "Latest"

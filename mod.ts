@@ -1,6 +1,5 @@
 import { Buffer } from "node:buffer";
-//@deno-types="npm:@types/libsodium-wrappers@0.7.14"
-import libsodium from "npm:libsodium-wrappers@0.7.13";
+import libsodium from "https://esm.sh/libsodium-wrappers@0.7.13";
 await libsodium.ready;
 /**
  * GitHub sodium sealer for encrypt value to GitHub secret value.
