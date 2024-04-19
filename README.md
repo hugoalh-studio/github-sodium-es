@@ -12,9 +12,9 @@ This project is based on "[libsodium.js](https://github.com/jedisct1/libsodium.j
 
 ## 🎯 Target
 
-- Bun ^ v1.0.0
+- Bun >= v1.1.0
 - Cloudflare Workers
-- Deno >= v1.34.0 / >= v1.41.1 (For JSR Only)
+- Deno >= v1.42.0
   > **🛡️ Require Permission**
   >
   > *N/A*

@@ -5,6 +5,9 @@ await libsodium.ready;
  * GitHub sodium sealer for encrypt value to GitHub secret value.
  */
 export class GitHubSodiumSealer {
+	get [Symbol.toStringTag](): string {
+		return "GitHubSodiumSealer";
+	}
 	#publicKey: Buffer;
 	/**
 	 * Initialize GitHub sodium sealer.

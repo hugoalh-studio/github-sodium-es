@@ -1,5 +1,5 @@
-// This file is only for JSR related, non-JSR related must set in the file `deno.jsonc`!
 {
+	"$schema": "https://deno.land/x/deno/cli/schemas/config-file.v1.json",
 	"name": "@hugoalh/github-sodium",
 	"version": "5.0.3",
 	"exports": {
@@ -26,6 +26,7 @@
 			"npm/**"
 		],
 		"include": [
+			"**/*.json",
 			"**/*.ts",
 			"**/*.tsx",
 			"jsr.jsonc",
