@@ -1,9 +1,9 @@
-import { dirname as pathDirname } from "node:path";
 import { transform, type TransformOutput } from "DNT/transform";
-import { copy as fsCopy } from "STD/fs/copy.ts";
-import { emptyDir } from "STD/fs/empty_dir.ts";
-import { ensureDir } from "STD/fs/ensure_dir.ts";
-import { walk as readDir, type WalkEntry } from "STD/fs/walk.ts";
+import { copy as fsCopy } from "STD/fs/copy";
+import { emptyDir } from "STD/fs/empty-dir";
+import { ensureDir } from "STD/fs/ensure-dir";
+import { walk as readDir, type WalkEntry } from "STD/fs/walk";
+import { dirname as pathDirname } from "node:path";
 const pathsMain: WalkEntry[] = await Array.fromAsync(readDir("."));
 const transformResult: TransformOutput = await transform({
 	entryPoints: ["mod.ts"],
