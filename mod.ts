@@ -2,7 +2,7 @@ import { Buffer } from "node:buffer";
 import libsodium from "https://esm.sh/libsodium-wrappers@0.7.13";
 await libsodium.ready;
 /**
- * GitHub sodium sealer for encrypt value to GitHub secret value.
+ * GitHub sodium sealer for encrypt value to the GitHub secret value.
  */
 export class GitHubSodiumSealer {
 	get [Symbol.toStringTag](): string {
@@ -11,7 +11,7 @@ export class GitHubSodiumSealer {
 	#publicKey: Buffer;
 	/**
 	 * Initialize GitHub sodium sealer.
-	 * @param {string} publicKey Organization's or repository's public key, which need for encrypt value to secret value before create or update a secret.
+	 * @param {string} publicKey Public key of the GitHub organization or repository, which need for encrypt value to the GitHub secret value before create or update a GitHub secret.
 	 */
 	constructor(publicKey: string) {
 		if (!(publicKey.length > 0)) {
@@ -20,8 +20,8 @@ export class GitHubSodiumSealer {
 		this.#publicKey = Buffer.from(publicKey, "base64");
 	}
 	/**
-	 * Encrypt value to GitHub secret value.
-	 * @param {string} value Value that need to encrypt as secret value.
+	 * Encrypt value to the GitHub secret value.
+	 * @param {string} value Value that need to encrypt as GitHub secret value.
 	 * @returns {string} An encrypted GitHub secret value.
 	 */
 	encrypt(value: string): string {
@@ -31,9 +31,9 @@ export class GitHubSodiumSealer {
 		return Buffer.from(libsodium.crypto_box_seal(Buffer.from(value), this.#publicKey)).toString("base64");
 	}
 	/**
-	 * Encrypt value to GitHub secret value.
-	 * @param {string} publicKey Organization's or repository's public key, which need for encrypt value to secret value before create or update a secret.
-	 * @param {string} value Value that need to encrypt as secret value.
+	 * Encrypt value to the GitHub secret value.
+	 * @param {string} publicKey Public key of the GitHub organization or repository, which need for encrypt value to the GitHub secret value before create or update a GitHub secret.
+	 * @param {string} value Value that need to encrypt as GitHub secret value.
 	 * @returns {string} An encrypted GitHub secret value.
 	 */
 	static seal(publicKey: string, value: string): string {
@@ -42,9 +42,9 @@ export class GitHubSodiumSealer {
 }
 export default GitHubSodiumSealer;
 /**
- * Encrypt value to GitHub secret value.
- * @param {string} publicKey Organization's or repository's public key, which need for encrypt value to secret value before create or update a secret.
- * @param {string} value Value that need to encrypt as secret value.
+ * Encrypt value to the GitHub secret value.
+ * @param {string} publicKey Public key of the GitHub organization or repository, which need for encrypt value to the GitHub secret value before create or update a GitHub secret.
+ * @param {string} value Value that need to encrypt as GitHub secret value.
  * @returns {string} An encrypted GitHub secret value.
  */
 export function seal(publicKey: string, value: string): string {
