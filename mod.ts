@@ -15,7 +15,7 @@ export class GitHubSodiumSealer {
 	 */
 	constructor(publicKey: string) {
 		if (!(publicKey.length > 0)) {
-			throw new SyntaxError(`Argument \`publicKey\` is not a string which is non-empty!`);
+			throw new SyntaxError(`Parameter \`publicKey\` is not a string which is non-empty!`);
 		}
 		this.#publicKey = Buffer.from(publicKey, "base64");
 	}
@@ -26,7 +26,7 @@ export class GitHubSodiumSealer {
 	 */
 	encrypt(value: string): string {
 		if (!(value.length > 0)) {
-			throw new SyntaxError(`Argument \`value\` is not a string which is non-empty!`);
+			throw new SyntaxError(`Parameter \`value\` is not a string which is non-empty!`);
 		}
 		return Buffer.from(libsodium.crypto_box_seal(Buffer.from(value), this.#publicKey)).toString("base64");
 	}
