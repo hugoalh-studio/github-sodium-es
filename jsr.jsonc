@@ -13,6 +13,14 @@
 	},
 	"imports": {
 	},
+	"lock": false,
+	"minimumDependencyAge": {
+		"age": "P7D",
+		"exclude": [
+			"jsr:@hugoalh/*",
+			"npm:@hugoalh/*"
+		]
+	},
 	"publish": {
 		"exclude": [
 			"**/*_bench.js",
